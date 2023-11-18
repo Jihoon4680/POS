@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.6.4)
+  - ColorizeSwift (1.2.0)
+  - CombineCocoa (0.4.1)
+  - MaterialActivityIndicator (0.0.6)
+  - SwiftPrettyPrint (1.2.0):
+    - ColorizeSwift
+
+DEPENDENCIES:
+  - Alamofire
+  - CombineCocoa
+  - MaterialActivityIndicator
+  - SwiftPrettyPrint (~> 1.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ColorizeSwift
+    - CombineCocoa
+    - MaterialActivityIndicator
+    - SwiftPrettyPrint
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  ColorizeSwift: 4eef354dce7335d7747a0ccacf78afe2b589a1be
+  CombineCocoa: e5210dbfb480ff251078929459ac17e750e7af1d
+  MaterialActivityIndicator: 5061a52fadf7d22533734f2d34806311331bc424
+  SwiftPrettyPrint: feca848b6aba4de9201e38f73184e9e5ac09da55
+
+PODFILE CHECKSUM: df0968760f80a6c4486cfe03671670aa6499a730
+
+COCOAPODS: 1.11.3
