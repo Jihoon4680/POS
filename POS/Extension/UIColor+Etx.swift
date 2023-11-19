@@ -32,7 +32,9 @@ extension UIColor {
     class var tableViewBg : UIColor {
         return UIColor(240, 244, 246)
     }
-    
+    class var tableBorder : UIColor {
+        return UIColor(65, 75, 86)
+    }
     //RGB extension
     convenience init(_ red: Int,_ green: Int,_ blue: Int,_ alpha : CGFloat = 1.0) {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)

@@ -21,7 +21,7 @@ class SplashVC: UIViewController {
         super.viewDidLoad()
         SceneManager.shared.nav = self.navigationController // navigation 설정
         configureHierarchy()
-        UIFont.checkFontName()
+//        UIFont.checkFontName() // 기기 내 Font Name 확인 
         
     }
     override func viewDidAppear(_ animated: Bool) {

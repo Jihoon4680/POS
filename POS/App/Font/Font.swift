@@ -20,6 +20,7 @@ enum Family: String {
 }
 
 extension UIFont {
+    //MARK: 프로젝트 내 Font 이름 확인
     static func checkFontName(){
         UIFont.familyNames.sorted().forEach { familyName in
             print("*** \(familyName) ***")
@@ -29,7 +30,7 @@ extension UIFont {
             print("---------------------")
         }
     }
-    
+    //MARK: notoSansKR 폰트 처리 
     static func notoSansKR(size: CGFloat = 10, family: Family = .Regular) -> UIFont? {
         return UIFont(name: "NotoSansKR-\(family)", size: size)
     }

@@ -9,8 +9,11 @@ import UIKit
 
 class TableCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "TableCollectionViewCell"
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
         configure()
     }
     required init?(coder: NSCoder) {
@@ -22,7 +25,10 @@ class TableCollectionViewCell: UICollectionViewCell {
 extension TableCollectionViewCell {
     func configure(){
         print(#fileID,#function,#line," jh.ahn - <#comment#> ")
-        self.backgroundColor = .blue
+        backgroundColor = .white
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.tableBorder.cgColor
+        layer.cornerRadius = 16
     }
 }
 
