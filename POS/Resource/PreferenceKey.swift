@@ -6,3 +6,6 @@
 //
 
 import Foundation
+
+//table 수 키 
+let TABLE_NUM = "TABLE_NUM"

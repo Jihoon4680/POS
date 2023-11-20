@@ -7,7 +7,8 @@ target 'POS' do
   pod 'MaterialActivityIndicator'
   pod 'Alamofire'
   pod 'CombineCocoa'
-  pod "SwiftPrettyPrint", "~> 1.2.0", :configuration => "Debug"  
+  pod "SwiftPrettyPrint", "~> 1.2.0", :configuration => "Debug" 
+  pod 'RealmSwift', '~>10' 
   # Pods for POS
 
 end

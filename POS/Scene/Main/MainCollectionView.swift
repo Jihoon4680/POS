@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class MainCollectionView : UICollectionView {
     
     enum SectionLayoutKind : Int {
@@ -69,7 +70,7 @@ extension MainCollectionView {
             let columns = layoutKind.columnCount // 한줄에 몇개 넣는지
             
             let itemSize = sectionNum == 0 ?
-            NSCollectionLayoutSize(widthDimension: .absolute(154),
+            NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.165),
                                    heightDimension: .fractionalHeight(1.0)) :
             NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
                                    heightDimension: .fractionalHeight(1.0))
@@ -82,8 +83,8 @@ extension MainCollectionView {
             item.contentInsets = itemInset
             
             let groupHeight = columns == 3 ?
-            NSCollectionLayoutDimension.absolute(42) :
-                NSCollectionLayoutDimension.fractionalWidth(0.2)
+            NSCollectionLayoutDimension.fractionalHeight(0.07) :
+            NSCollectionLayoutDimension.fractionalHeight(0.255)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: groupHeight)
             print(#fileID,#function,#line," jh.ahn - groupheight : \(groupHeight) ")
@@ -91,7 +92,7 @@ extension MainCollectionView {
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: columns)
 
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 24, bottom: 20, trailing: 24)
+            section.contentInsets = columns == 3 ?  NSDirectionalEdgeInsets(top: 24, leading: 24, bottom: 20, trailing: 24) : NSDirectionalEdgeInsets(top: 20, leading: 24, bottom: 24, trailing: 24)
             return section
         }
         return layout

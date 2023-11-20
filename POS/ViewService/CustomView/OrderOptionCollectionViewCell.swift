@@ -9,11 +9,13 @@ import UIKit
 
 class OrderOptionCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "OrderOptionCollectionViewCell"
+    
     lazy var titleLabel : PosLabel = {
         let label = PosLabel()
         label.text = "테이블번호"
-        label.textColor = .white
-        label.setFontType(type: .Bold, size: 21)
+        label.textColor = .black
+        label.setFontType(type: .Bold, size: 25)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,7 +33,10 @@ class OrderOptionCollectionViewCell: UICollectionViewCell {
 extension OrderOptionCollectionViewCell {
     func configure(){
         print(#fileID,#function,#line," jh.ahn - <#comment#> ")
-        self.backgroundColor = .black
+        self.backgroundColor = .white
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.tableBorder.cgColor
+        layer.cornerRadius = 8
         
         addSubview(titleLabel)
         

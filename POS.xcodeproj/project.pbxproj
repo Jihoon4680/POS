@@ -23,6 +23,9 @@
 		E972966E2B065D9400A4430D /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972966D2B065D9400A4430D /* UIImage+Ext.swift */; };
 		E97296702B07A47700A4430D /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972966F2B07A47700A4430D /* MainTableView.swift */; };
 		E97296732B07A91A00A4430D /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97296722B07A91A00A4430D /* TableCollectionViewCell.swift */; };
+		E979C0C42B0BA863003300F6 /* TableNumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E979C0C32B0BA863003300F6 /* TableNumModel.swift */; };
+		E979C0C62B0BA892003300F6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E979C0C52B0BA892003300F6 /* Menu.swift */; };
+		E979C0C82B0BA89E003300F6 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E979C0C72B0BA89E003300F6 /* MenuList.swift */; };
 		E9850F0E2AEE13DD008C1C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9850F0D2AEE13DD008C1C03 /* AppDelegate.swift */; };
 		E9850F102AEE13DD008C1C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9850F0F2AEE13DD008C1C03 /* SceneDelegate.swift */; };
 		E9850F172AEE13DE008C1C03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9850F162AEE13DE008C1C03 /* Assets.xcassets */; };
@@ -72,6 +75,9 @@
 		E972966D2B065D9400A4430D /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		E972966F2B07A47700A4430D /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		E97296722B07A91A00A4430D /* TableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewCell.swift; sourceTree = "<group>"; };
+		E979C0C32B0BA863003300F6 /* TableNumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableNumModel.swift; sourceTree = "<group>"; };
+		E979C0C52B0BA892003300F6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		E979C0C72B0BA89E003300F6 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		E9850F0A2AEE13DD008C1C03 /* POS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9850F0D2AEE13DD008C1C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9850F0F2AEE13DD008C1C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -326,6 +332,9 @@
 		E9B1B1A02AF944DE0044E5C5 /* DBModels */ = {
 			isa = PBXGroup;
 			children = (
+				E979C0C32B0BA863003300F6 /* TableNumModel.swift */,
+				E979C0C72B0BA89E003300F6 /* MenuList.swift */,
+				E979C0C52B0BA892003300F6 /* Menu.swift */,
 			);
 			path = DBModels;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 				E96CF5DB2B08AF08006FD828 /* OrderOptionCollectionViewCell.swift in Sources */,
 				E97296632AFF63A600A4430D /* MainModel.swift in Sources */,
 				E969C6662AEFE9DB009DB0FB /* SplashVC.swift in Sources */,
+				E979C0C82B0BA89E003300F6 /* MenuList.swift in Sources */,
 				E97296702B07A47700A4430D /* MainTableView.swift in Sources */,
 				E972966B2AFF853700A4430D /* Base.swift in Sources */,
 				E969C6682AEFE9F2009DB0FB /* SplashVM.swift in Sources */,
@@ -475,6 +485,7 @@
 				E969C66A2AEFEA02009DB0FB /* SpalshModel.swift in Sources */,
 				E9B1B18D2AF921050044E5C5 /* AFManager.swift in Sources */,
 				E9B1B1982AF943AB0044E5C5 /* PreferenceKey.swift in Sources */,
+				E979C0C42B0BA863003300F6 /* TableNumModel.swift in Sources */,
 				E9954A692AF6190400C6F70F /* UILabel+Ext.swift in Sources */,
 				E9954A672AF6161B00C6F70F /* SceneContainer.swift in Sources */,
 				E9B1B1912AF9295B0044E5C5 /* LogManager.swift in Sources */,
@@ -482,6 +493,7 @@
 				E97296612AFF63A500A4430D /* MainCollectionView.swift in Sources */,
 				E97296692AFF79DC00A4430D /* TopInfoView.swift in Sources */,
 				E9B1B1892AF747B60044E5C5 /* UIColor+Etx.swift in Sources */,
+				E979C0C62B0BA892003300F6 /* Menu.swift in Sources */,
 				E9B1B1942AF9435A0044E5C5 /* Constants.swift in Sources */,
 				E97296732B07A91A00A4430D /* TableCollectionViewCell.swift in Sources */,
 				E9B1B19C2AF944830044E5C5 /* DBManager.swift in Sources */,

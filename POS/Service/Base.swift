@@ -31,6 +31,15 @@ class Base : NSObject{
         let nowDate = Date()
         return currentFormatter.string(from: nowDate)
     }
+    /**
+     Date : 2023 . 11 . 20
+     author :  JH
+     Parameter : Int // 테이블 수
+     Content : 테이블 수 셋팅
+     */
+    func setTableNum(num : Int){
+        
+    }
     
     
     

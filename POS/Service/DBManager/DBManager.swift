@@ -7,7 +7,12 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class DBManager {
+    
+    static let shared = DBManager()
+    
+    let realm = try! Realm()
     
 }

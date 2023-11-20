@@ -32,7 +32,23 @@ class PosLabel : UILabel {
     func setFontType(type : Family, size : CGFloat){
         self.font = UIFont.notoSansKR(size: size, family: type)
     }
-    
+    /// line Height 조절
+    func setTextWithLineHeight(text: String?, lineHeight: CGFloat) {
+           if let text = text {
+               let style = NSMutableParagraphStyle()
+               style.maximumLineHeight = lineHeight
+               style.minimumLineHeight = lineHeight
+               
+               let attributes: [NSAttributedString.Key: Any] = [
+               .paragraphStyle: style,
+               .baselineOffset: (lineHeight - font.lineHeight) 
+               ]
+                   
+               let attrString = NSAttributedString(string: text,
+                                                   attributes: attributes)
+               self.attributedText = attrString
+           }
+       }
     
 
 }

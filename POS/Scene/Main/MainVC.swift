@@ -10,6 +10,9 @@ import UIKit
 import Combine
 
 class MainVC: UIViewController {
+    
+    let vm = MainVM()
+    
     // 시간 뷰
     lazy var topInfoView : TopInfoView = {
         let view = TopInfoView() // 상단 날짜, 시간 뷰
@@ -20,6 +23,7 @@ class MainVC: UIViewController {
     lazy var mainCollectionView : MainCollectionView = {
         let collectionView = MainCollectionView(frame: .zero, collectionViewLayout: MainCollectionView.createLayout())
         collectionView.register(TableCollectionViewCell.self, forCellWithReuseIdentifier: TableCollectionViewCell.identifier) // 셀 등록
+        collectionView.register(OrderOptionCollectionViewCell.self, forCellWithReuseIdentifier: OrderOptionCollectionViewCell.identifier)
         
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false // 이거 왜 안됐는데
@@ -89,13 +93,8 @@ extension MainVC : UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as? TableCollectionViewCell else {
-            debugPrint("‼️",#fileID,#function,#line, " is nil ")
-            return UICollectionViewCell()
-        }
-        
-        return cell
+        print("section index : \(indexPath.section)")
+        return vm.collectionView(collectionView, cellForItemAt: indexPath)
     }
 }
 

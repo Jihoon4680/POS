@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+let orderOptionStr = ["테이블번호", "주문내역", "설정"]
