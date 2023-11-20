@@ -27,6 +27,11 @@ class TableCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    lazy var menuSV : UIStackView = { // menu StackView
+       let view = UIStackView()
+        return view
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,7 +63,6 @@ extension TableCollectionViewCell {
             tableNumLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             tableNumLabel.widthAnchor.constraint(equalToConstant: 54),
             tableNumLabel.heightAnchor.constraint(equalToConstant: 34)
-            
             
         ])
     }
