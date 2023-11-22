@@ -41,6 +41,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         configureLayout()
         configureDataSource()
+        ToastManager.showMessage("이렇게?")
     }
     // 시간,와이파이,배터리잔량 상태 바 Hidden
     override var prefersStatusBarHidden: Bool {

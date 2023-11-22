@@ -54,6 +54,7 @@
 		E9B1B1982AF943AB0044E5C5 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1B1972AF943AB0044E5C5 /* PreferenceKey.swift */; };
 		E9B1B19A2AF944200044E5C5 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1B1992AF944200044E5C5 /* ToastManager.swift */; };
 		E9B1B19C2AF944830044E5C5 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1B19B2AF944830044E5C5 /* DBManager.swift */; };
+		E9C85EB42B0DF88F00082A1D /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C85EB32B0DF88F00082A1D /* PopupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +94,7 @@
 		E9B1B1642AF72DD20044E5C5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		E9B1B1762AF745D60044E5C5 /* NotoSansKR-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-ExtraBold.ttf"; sourceTree = "<group>"; };
 		E9B1B1772AF745D60044E5C5 /* NotoSansKR-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
-		E9B1B1782AF745D60044E5C5 /* NotoSansKR-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Thin.ttf"; path = "../../../../../../Downloads/Noto_Sans_KR/NotoSansKR/NotoSansKR-Thin.ttf"; sourceTree = "<group>"; };
+		E9B1B1782AF745D60044E5C5 /* NotoSansKR-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.ttf"; sourceTree = "<group>"; };
 		E9B1B1792AF745D60044E5C5 /* NotoSansKR-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-ExtraLight.ttf"; sourceTree = "<group>"; };
 		E9B1B17A2AF745D60044E5C5 /* NotoSansKR-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.ttf"; sourceTree = "<group>"; };
 		E9B1B17B2AF745D60044E5C5 /* NotoSansKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.ttf"; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		E9B1B1972AF943AB0044E5C5 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		E9B1B1992AF944200044E5C5 /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 		E9B1B19B2AF944830044E5C5 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		E9C85EB32B0DF88F00082A1D /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		E972965E2AFF635800A4430D /* ViewService */ = {
 			isa = PBXGroup;
 			children = (
+				E9C85EB22B0DF76B00082A1D /* Popup */,
 				E96ED8D12B0CEC680083C7AC /* CollectionViewCell */,
 				E96ED8D22B0CEC710083C7AC /* TableViewCell */,
 				E9B1B1992AF944200044E5C5 /* ToastManager.swift */,
@@ -355,6 +358,14 @@
 			path = DBModels;
 			sourceTree = "<group>";
 		};
+		E9C85EB22B0DF76B00082A1D /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				E9C85EB32B0DF88F00082A1D /* PopupVC.swift */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -511,6 +522,7 @@
 				E9B1B1892AF747B60044E5C5 /* UIColor+Etx.swift in Sources */,
 				E979C0C62B0BA892003300F6 /* Menu.swift in Sources */,
 				E9B1B1942AF9435A0044E5C5 /* Constants.swift in Sources */,
+				E9C85EB42B0DF88F00082A1D /* PopupVC.swift in Sources */,
 				E97296732B07A91A00A4430D /* TableCollectionViewCell.swift in Sources */,
 				E9B1B19C2AF944830044E5C5 /* DBManager.swift in Sources */,
 			);
