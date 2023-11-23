@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E4DAEAE02B8203965635C72B /* Pods_POS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8B530146503F43601B543C /* Pods_POS.framework */; };
 		E917459F2B0EF41D00F95ABC /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E917459E2B0EF41D00F95ABC /* UIButton+Ext.swift */; };
+		E91745AF2B0F509500F95ABC /* CurrentSalesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91745AE2B0F509500F95ABC /* CurrentSalesList.swift */; };
 		E969C6612AEFE82A009DB0FB /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969C6602AEFE82A009DB0FB /* UIViewController+Ext.swift */; };
 		E969C6662AEFE9DB009DB0FB /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969C6652AEFE9DB009DB0FB /* SplashVC.swift */; };
 		E969C6682AEFE9F2009DB0FB /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969C6672AEFE9F2009DB0FB /* SplashVM.swift */; };
@@ -63,6 +64,7 @@
 		4C600EB5723B1DC2ECD0BFB2 /* Pods-POS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POS.debug.xcconfig"; path = "Target Support Files/Pods-POS/Pods-POS.debug.xcconfig"; sourceTree = "<group>"; };
 		8F8B530146503F43601B543C /* Pods_POS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E917459E2B0EF41D00F95ABC /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		E91745AE2B0F509500F95ABC /* CurrentSalesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSalesList.swift; sourceTree = "<group>"; };
 		E969C6602AEFE82A009DB0FB /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		E969C6652AEFE9DB009DB0FB /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		E969C6672AEFE9F2009DB0FB /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
@@ -193,14 +195,14 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		E972965E2AFF635800A4430D /* ViewService */ = {
+		E972965E2AFF635800A4430D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E96ED8D12B0CEC680083C7AC /* CollectionViewCell */,
 				E96ED8D22B0CEC710083C7AC /* TableViewCell */,
 				E9954A6F2AF62AFF00C6F70F /* CustomView */,
 			);
-			path = ViewService;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E972965F2AFF637D00A4430D /* Main */ = {
@@ -239,7 +241,7 @@
 				E9B1B1922AF9433B0044E5C5 /* Resource */,
 				E969C65F2AEFE815009DB0FB /* Extension */,
 				E9B1B18A2AF74CD40044E5C5 /* Service */,
-				E972965E2AFF635800A4430D /* ViewService */,
+				E972965E2AFF635800A4430D /* Views */,
 				E969C6622AEFE99C009DB0FB /* Scene */,
 			);
 			path = POS;
@@ -311,17 +313,9 @@
 		E9B1B18B2AF74CE80044E5C5 /* AFManager */ = {
 			isa = PBXGroup;
 			children = (
-				E9B1B18E2AF925160044E5C5 /* APIModel */,
 				E9B1B18C2AF921050044E5C5 /* AFManager.swift */,
 			);
 			path = AFManager;
-			sourceTree = "<group>";
-		};
-		E9B1B18E2AF925160044E5C5 /* APIModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIModel;
 			sourceTree = "<group>";
 		};
 		E9B1B18F2AF925280044E5C5 /* LogManager */ = {
@@ -357,6 +351,7 @@
 				E979C0C32B0BA863003300F6 /* TableNum.swift */,
 				E979C0C72B0BA89E003300F6 /* MenuList.swift */,
 				E979C0C52B0BA892003300F6 /* Menu.swift */,
+				E91745AE2B0F509500F95ABC /* CurrentSalesList.swift */,
 			);
 			path = DBModels;
 			sourceTree = "<group>";
@@ -506,6 +501,7 @@
 				E972966E2B065D9400A4430D /* UIImage+Ext.swift in Sources */,
 				E969C66A2AEFEA02009DB0FB /* SpalshModel.swift in Sources */,
 				E9B1B18D2AF921050044E5C5 /* AFManager.swift in Sources */,
+				E91745AF2B0F509500F95ABC /* CurrentSalesList.swift in Sources */,
 				E9B1B1982AF943AB0044E5C5 /* PreferenceKey.swift in Sources */,
 				E979C0C42B0BA863003300F6 /* TableNum.swift in Sources */,
 				E9954A692AF6190400C6F70F /* UILabel+Ext.swift in Sources */,
