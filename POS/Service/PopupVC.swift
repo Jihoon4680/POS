@@ -85,12 +85,11 @@ class PopupVC : UIViewController{
         return sv
     }()
     
-    let cancelBlock : (() -> Void)? = nil
-    let okBlock : (() -> Void)? = nil
+    var cancelBlock : (() -> Void)? = nil
+    var okBlock : (() -> Void)? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         if type == .OneButton {
             configureOneButtonLayout()
         }else {
@@ -187,12 +186,14 @@ class PopupVC : UIViewController{
      
     }
     
-    private func configureUI(){
-        
+    func configureUI(title : String, body : String){
+        titleLabel.text = title
+        bodyLabel.text = body
     }
     
     @objc private func clickCancel(){
-        cancelBlock?()
+//        cancelBlock?()
+        SceneManager.shared.nav?.dismiss(animated: false)
     }
     
     @objc private func clickOk(){

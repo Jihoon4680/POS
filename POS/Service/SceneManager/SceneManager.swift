@@ -30,11 +30,23 @@ class SceneManager : NSObject {
 
 // MARK: Scene move 관련
 extension SceneManager : MoveScene {
-    
-    func showPopup(type: PopupType) {
+    /*
+     // MARK: - ShowPopup
+     Popup띄우기 확인과 취소 액션을 커스텀
+     @ date 2023.11.23
+     @ author jhahn
+     @ param type : 버튼 개수
+                okAction : let action = { // 동작코드 ex.print("ok" //} 선언 후 입력
+                okAction : let action = { // 동작코드 ex.print("cancel" //} 선언 후 입력
+     @ return
+     */
+    func showPopup(type: PopupType,title : String, body : String, okAction: @escaping (() -> Void)) {
         let popupVC = PopupVC()
-        popupVC.type = type
         popupVC.modalPresentationStyle = .overFullScreen
+        popupVC.type = type
+        popupVC.configureUI(title: title, body: body)
+        popupVC.okBlock = okAction
+//        popupVC.cancelBlock = cancelAction
         nav?.present(popupVC, animated: false)
     }
     

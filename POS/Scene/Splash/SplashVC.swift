@@ -26,9 +26,7 @@ class SplashVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 , execute: { [weak self] in
-//            self?.goToMain()
-            let popupvc = PopupVC()
-            SceneManager.shared.pushVC(vc: popupvc)
+            self?.goToMain()
         })
     }
     
