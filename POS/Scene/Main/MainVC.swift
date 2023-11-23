@@ -39,15 +39,16 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureHierarchy()
+        configureLayout()
         configureDataSource()
+        ToastManager.showMessage("이렇게?")
     }
     // 시간,와이파이,배터리잔량 상태 바 Hidden
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    func configureHierarchy(){
+    func configureLayout(){
         // safeArea잡기
         let safeAreaGuide = view.safeAreaLayoutGuide
         view.addSubview(topInfoView)
@@ -72,8 +73,7 @@ class MainVC: UIViewController {
     func configureDataSource() {
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
-        
-        
+ 
     }
     
 }

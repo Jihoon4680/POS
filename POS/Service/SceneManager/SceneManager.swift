@@ -24,10 +24,20 @@ class SceneManager : NSObject {
     
     var mainVC : MainVC? // 테이블 & 주문목록
     
+    var popupVC : PopupVC?
+    
 }
 
 // MARK: Scene move 관련
 extension SceneManager : MoveScene {
+    
+    func showPopup(type: PopupType) {
+        let popupVC = PopupVC()
+        popupVC.type = type
+        popupVC.modalPresentationStyle = .overFullScreen
+        nav?.present(popupVC, animated: false)
+    }
+    
     func pushVC(vc: UIViewController?) {
         if let vc = vc {
             nav?.pushViewController(vc, animated: true)
