@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E4DAEAE02B8203965635C72B /* Pods_POS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8B530146503F43601B543C /* Pods_POS.framework */; };
+		E917459F2B0EF41D00F95ABC /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E917459E2B0EF41D00F95ABC /* UIButton+Ext.swift */; };
 		E969C6612AEFE82A009DB0FB /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969C6602AEFE82A009DB0FB /* UIViewController+Ext.swift */; };
 		E969C6662AEFE9DB009DB0FB /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969C6652AEFE9DB009DB0FB /* SplashVC.swift */; };
 		E969C6682AEFE9F2009DB0FB /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969C6672AEFE9F2009DB0FB /* SplashVM.swift */; };
@@ -61,6 +62,7 @@
 		452485C7089ED951F61F734E /* Pods-POS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POS.release.xcconfig"; path = "Target Support Files/Pods-POS/Pods-POS.release.xcconfig"; sourceTree = "<group>"; };
 		4C600EB5723B1DC2ECD0BFB2 /* Pods-POS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POS.debug.xcconfig"; path = "Target Support Files/Pods-POS/Pods-POS.debug.xcconfig"; sourceTree = "<group>"; };
 		8F8B530146503F43601B543C /* Pods_POS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E917459E2B0EF41D00F95ABC /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		E969C6602AEFE82A009DB0FB /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		E969C6652AEFE9DB009DB0FB /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		E969C6672AEFE9F2009DB0FB /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				E9954A6D2AF61FA500C6F70F /* UIView+Ext.swift */,
 				E9B1B1882AF747B60044E5C5 /* UIColor+Etx.swift */,
 				E972966D2B065D9400A4430D /* UIImage+Ext.swift */,
+				E917459E2B0EF41D00F95ABC /* UIButton+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -193,10 +196,8 @@
 		E972965E2AFF635800A4430D /* ViewService */ = {
 			isa = PBXGroup;
 			children = (
-				E9C85EB22B0DF76B00082A1D /* Popup */,
 				E96ED8D12B0CEC680083C7AC /* CollectionViewCell */,
 				E96ED8D22B0CEC710083C7AC /* TableViewCell */,
-				E9B1B1992AF944200044E5C5 /* ToastManager.swift */,
 				E9954A6F2AF62AFF00C6F70F /* CustomView */,
 			);
 			path = ViewService;
@@ -300,6 +301,8 @@
 				E9B1B18B2AF74CE80044E5C5 /* AFManager */,
 				E9954A632AF614CE00C6F70F /* SceneManager */,
 				E9B1B19D2AF944880044E5C5 /* DBManager */,
+				E9C85EB32B0DF88F00082A1D /* PopupVC.swift */,
+				E9B1B1992AF944200044E5C5 /* ToastManager.swift */,
 				E972966A2AFF853700A4430D /* Base.swift */,
 			);
 			path = Service;
@@ -356,14 +359,6 @@
 				E979C0C52B0BA892003300F6 /* Menu.swift */,
 			);
 			path = DBModels;
-			sourceTree = "<group>";
-		};
-		E9C85EB22B0DF76B00082A1D /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				E9C85EB32B0DF88F00082A1D /* PopupVC.swift */,
-			);
-			path = Popup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,6 +515,7 @@
 				E97296612AFF63A500A4430D /* MainCollectionView.swift in Sources */,
 				E97296692AFF79DC00A4430D /* TopInfoView.swift in Sources */,
 				E9B1B1892AF747B60044E5C5 /* UIColor+Etx.swift in Sources */,
+				E917459F2B0EF41D00F95ABC /* UIButton+Ext.swift in Sources */,
 				E979C0C62B0BA892003300F6 /* Menu.swift in Sources */,
 				E9B1B1942AF9435A0044E5C5 /* Constants.swift in Sources */,
 				E9C85EB42B0DF88F00082A1D /* PopupVC.swift in Sources */,

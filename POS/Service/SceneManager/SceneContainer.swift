@@ -8,6 +8,8 @@
 import Foundation
 
 protocol SceneContainer {
-    var splash : SplashVC? { get set}
-    var main : MainVC? { get set}
+    var splashVC : SplashVC? { get set}
+    var mainVC : MainVC? { get set}
+    var popupVC : MainVC? { get set}
+    
 }

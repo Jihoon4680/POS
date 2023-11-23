@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol MoveScene {
+    func showPopup(type : PopupType) // 팝업을 어떻게 띄울 것 인가. 
     func pushVC(vc : UIViewController?) // nav view Push
     func popVC() // nav view Pop
 }
