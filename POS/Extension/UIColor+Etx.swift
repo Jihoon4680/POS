@@ -41,6 +41,9 @@ extension UIColor {
     class var appGrey : UIColor {
         return UIColor(92,101,114)
     }
+    class var menuViewBg : UIColor {
+        return UIColor(229, 238, 255)
+    }
     
     //RGB extension
     convenience init(_ red: Int,_ green: Int,_ blue: Int,_ alpha : CGFloat = 1.0) {

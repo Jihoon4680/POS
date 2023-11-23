@@ -18,4 +18,11 @@ extension UIImage {
         return image
      }
     
+    class var closeImg: UIImage {
+        guard let image = UIImage(systemName: "xmark") else {
+            debugPrint( #fileID,#function,#line," ‼️ is nil ")
+            return UIImage()
+        }
+        return image
+    }
 }
