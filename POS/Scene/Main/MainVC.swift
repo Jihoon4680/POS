@@ -24,9 +24,8 @@ class MainVC: UIViewController {
         let collectionView = MainCollectionView(frame: .zero, collectionViewLayout: MainCollectionView.createLayout())
         collectionView.register(TableCollectionViewCell.self, forCellWithReuseIdentifier: TableCollectionViewCell.identifier) // 셀 등록
         collectionView.register(OrderOptionCollectionViewCell.self, forCellWithReuseIdentifier: OrderOptionCollectionViewCell.identifier)
-        
-        
-        collectionView.translatesAutoresizingMaskIntoConstraints = false // 이거 왜 안됐는데
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false 
         return collectionView
     }()
     // 주문내역 확인
@@ -41,7 +40,9 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         configureLayout()
         configureDataSource()
-
+        Base.shared.checkSales() // 영업시작 전 or 시작 24시간이후
+        
+        
     }
     // 시간,와이파이,배터리잔량 상태 바 Hidden
     override var prefersStatusBarHidden: Bool {
@@ -68,7 +69,7 @@ class MainVC: UIViewController {
             mainCollectionView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor),
             
         ])
-        print(#fileID,#function,#line," jh.ahn - collectionView Frame : \(mainCollectionView.frame) ")
+//        print(#fileID,#function,#line," jh.ahn - collectionView Frame : \(mainCollectionView.frame) ")
     }
     func configureDataSource() {
         mainCollectionView.delegate = self
@@ -78,13 +79,13 @@ class MainVC: UIViewController {
     
 }
 
-extension MainVC : UICollectionViewDataSource, UICollectionViewDelegate{
+extension MainVC : UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(#fileID,#function,#line," jh.ahn - section \( section.hashValue) ")
+//        print(#fileID,#function,#line," jh.ahn - section \( section.hashValue) ")
         if section == 0 {
             return 3
         } else {
@@ -93,8 +94,13 @@ extension MainVC : UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("section index : \(indexPath.section)")
+//        print("section index : \(indexPath.section)")
         return vm.collectionView(collectionView, cellForItemAt: indexPath)
+    }
+}
+extension MainVC : UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        vm.collectionView(collectionView, didSelectItemAt: indexPath)
     }
 }
 

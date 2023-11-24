@@ -74,7 +74,7 @@ extension TableCollectionViewCell {
         layer.borderColor = UIColor.tableBorder.cgColor
         layer.cornerRadius = 16
         
-        threeDotImgView.isHidden = false
+//        threeDotImgView.isHidden = false
     }
     
     private func configureLayout(){
@@ -114,7 +114,7 @@ struct TableCollectionViewCell_PreView: PreviewProvider {
         
         TableCollectionViewCell()
             .getPreview()
-            .previewLayout(.fixed(width: 168, height: 136))
+            .previewLayout(.fixed(width: 250, height: 200))
     }
 }
 #endif

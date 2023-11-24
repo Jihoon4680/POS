@@ -42,16 +42,16 @@ class TopInfoView : UIView {
 
     override init(frame : CGRect){
         super.init(frame: frame)
-        configureHierarchy()
+        configureLayout()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        configureHierarchy()
+        configureLayout()
         
     }
     
-    private func configureHierarchy(){
+    private func configureLayout(){
         self.backgroundColor = .appLightGrey
         
         addSubview(dateLabel)
@@ -88,8 +88,6 @@ class TopInfoView : UIView {
 
 #if DEBUG
 import SwiftUI
-
-
 
 @available(iOS 13, *)
 struct TopInfoView_Preview: PreviewProvider {

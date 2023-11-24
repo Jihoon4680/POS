@@ -14,6 +14,8 @@ class MainVM {
         print(#fileID,#function,#line," jh.ahn -  ")
     }
     
+    
+    
 }
 
 
@@ -29,7 +31,12 @@ extension MainVM {
                 debugPrint("‼️",#fileID,#function,#line, " is nil ")
                 return UICollectionViewCell()
             }
+            if indexPath.row == 0 {
+                cell.titleLabel.textColor = .white
+                cell.backgroundColor = .appBlack
+            }
             cell.titleLabel.text = orderOptionStr[indexPath.row]
+            
             
             return cell
         case 1: // Table
@@ -37,7 +44,12 @@ extension MainVM {
                     debugPrint("‼️",#fileID,#function,#line, " is nil ")
                     return UICollectionViewCell()
                 }
-            cell.tableNumLabel.text = "\(indexPath.row)"
+            cell.tableNumLabel.text = "\(indexPath.row + 1)"
+            // 이것도 데이터에 있는것만 쓔루룽 받아와야겠네 ....흠
+            cell.menuListSV.addArrangedSubview(MenuSV())
+            cell.menuListSV.addArrangedSubview(MenuSV())
+            cell.menuListSV.addArrangedSubview(MenuSV())
+            
             return cell
         default:
             return UICollectionViewCell()
@@ -48,5 +60,37 @@ extension MainVM {
 
 //MARK: CollectionView Delegate
 extension MainVM {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        let sectionIndex = indexPath.section
+        
+        switch sectionIndex {
+        case 0: // OrderOption
+            guard let cell = collectionView.cellForItem(at: indexPath) as? OrderOptionCollectionViewCell else {
+                debugPrint("‼️",#fileID,#function,#line, " is nil ")
+                return
+            }
+            switch indexPath.row {
+            case 0: // 테이블
+                print("테이블 선택")
+            case 1: // 주문내역
+                print("주문내역")
+            case 2: // 설정
+                print("설정")
+            default: // 테이블
+                print("테이블 선택")
+            }
+            
+        case 1: // Table
+                guard let cell = collectionView.cellForItem(at: indexPath) as? TableCollectionViewCell else {
+                    debugPrint("‼️",#fileID,#function,#line, " is nil ")
+                    return
+                }
+            print("indexpath.row \(indexPath.row)")
+//            let vc = orderVC()
+//            SceneManager.shared.pushVC(vc: )
+       
+        default:
+            return
+        }
+    }
 }
