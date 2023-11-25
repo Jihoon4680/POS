@@ -1,12 +1,12 @@
 import UIKit
 
-var data: [MenuModel] = [
-    MenuModel(menuName: "김치전", price: 10000, menuCategory: 0),
-    MenuModel(menuName: "제육볶음", price: 12000, menuCategory: 0),
-    MenuModel(menuName: "순대볶음", price: 15000, menuCategory: 0),
-    MenuModel(menuName: "소주", price: 4000, menuCategory: 1),
-    MenuModel(menuName: "맥주", price: 4000, menuCategory: 1),
-    MenuModel(menuName: "막걸리", price: 4000, menuCategory: 1),
+var data: [Menu] = [
+    Menu(name: "김치전", price: 10000, category_no: 0),
+    Menu(name: "소주", price: 4000, category_no: 1),
+    Menu(name: "맥주", price: 4000, category_no: 1),
+    Menu(name: "순대볶음", price: 12000, category_no: 0),
+    Menu(name: "제육볶음", price: 15000, category_no: 0),
+    Menu(name: "막걸리", price: 4000, category_no: 1),
 ]
 
 class SettingVC: UIViewController {
@@ -31,24 +31,6 @@ class SettingVC: UIViewController {
         cv.translatesAutoresizingMaskIntoConstraints = false
         
         return cv
-    }()
-    
-    lazy var food: PosLabel = {
-        let label = PosLabel()
-        label.text = "요리"
-        label.textColor = .black
-        label.setFontType(type: .Medium, size: 24)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var drink: PosLabel = {
-        let label = PosLabel()
-        label.text = "주류"
-        label.textColor = .black
-        label.setFontType(type: .Medium, size: 24)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
     
     override func viewDidLoad() {

@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class SettingVM {
-    var data: [MenuModel] = []
+    var data: [Menu] = []
     
-    init(menuList: [MenuModel]) {
+    init(menuList: [Menu]) {
         self.data = menuList
         print(#fileID,#function,#line," jh.ahn -  ")
     }
@@ -23,9 +23,9 @@ class SettingVM {
 extension SettingVM {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return data.filter { $0.menuCategory == 0  }.count
+            return data.filter { $0.category_no == 0  }.count
         } else {
-            return data.filter { $0.menuCategory == 1 }.count
+            return data.filter { $0.category_no == 1 }.count
         }
     }
     
@@ -47,14 +47,14 @@ extension SettingVM {
         
         switch sectionIndex {
         case 0: // food
-            let item = data.filter { $0.menuCategory == 0 }[indexPath.row]
-            cell.nameLabel.text = item.menuName
+            let item = data.filter { $0.category_no == 0 }[indexPath.row]
+            cell.nameLabel.text = item.name
             cell.priceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
             cell.containerView.backgroundColor = UIColor.menuFoodViewBg
             selectedIndex = indexPath.row
         case 1: // Drink
-            let item = data.filter { $0.menuCategory == 1 }[indexPath.row]
-            cell.nameLabel.text = item.menuName
+            let item = data.filter { $0.category_no == 1 }[indexPath.row]
+            cell.nameLabel.text = item.name
             cell.priceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
             cell.containerView.backgroundColor = UIColor.menuDrinkViewBg
             selectedIndex = indexPath.row
@@ -64,7 +64,7 @@ extension SettingVM {
         }
         
         cell.removeCompletion = {
-            self.data = self.data.filter { $0.id != self.data[selectedIndex].id}
+            self.data = self.data.filter { $0.name != self.data[selectedIndex].name}
             collectionView.reloadData()
         }
         
