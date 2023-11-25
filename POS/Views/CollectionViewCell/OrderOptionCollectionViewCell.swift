@@ -11,11 +11,16 @@ class OrderOptionCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "OrderOptionCollectionViewCell"
     
+    var openPopupCompletion: (() -> Void)? = nil
+    
     lazy var titleLabel : PosLabel = {
         let label = PosLabel()
         label.text = "테이블번호"
         label.textColor = .black
         label.setFontType(type: .Bold, size: 25)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(OrderOptionCollectionViewCell.openPopup))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(tap)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -26,6 +31,10 @@ class OrderOptionCollectionViewCell: UICollectionViewCell {
     }
     required init?(coder: NSCoder) {
         fatalError("not implemented")
+    }
+    
+    @objc func openPopup() {
+        openPopupCompletion?()
     }
     
 }

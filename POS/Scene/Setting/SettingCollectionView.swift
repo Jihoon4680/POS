@@ -50,15 +50,6 @@ class SettingCollectionView: UICollectionView {
         
     }
     
-//    class func layout() -> UICollectionViewFlowLayout {
-//        let cvLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        cvLayout.minimumLineSpacing = 16
-//        cvLayout.minimumInteritemSpacing = 11
-//        cvLayout.sectionInset = UIEdgeInsets(top: 8, left: 24, bottom: 14, right: 24)
-//        cvLayout.itemSize = CGSize(width: 169, height: 137)
-//        return cvLayout
-//    }
-    
     class func layout() -> UICollectionViewLayout{
        
         let layout = UICollectionViewCompositionalLayout {

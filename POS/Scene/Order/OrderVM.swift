@@ -117,7 +117,6 @@ extension OrderVM {
         }
         switch sectionIndex {
         case 0: // OrderOption
-           
             switch indexPath.row {
             case 0: // 테이블
                 print("테이블 선택")

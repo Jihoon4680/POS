@@ -33,7 +33,7 @@ extension MainVM {
             }
             cell.backgroundColor = .white
             if indexPath.row == 0 {
-                print(#fileID,#function,#line," jh.ahn - \(orderOptionStr[indexPath.row]) ")
+                print(#fileID,#function,#line," jh.ahn - \(orderOptionStr[indexPath.row]) \(indexPath.section)")
                 cell.titleLabel.textColor = .white
                 cell.backgroundColor = .appBlack
             }
@@ -41,10 +41,10 @@ extension MainVM {
             return cell
             
         case 1: // Table
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as? TableCollectionViewCell else {
-                    debugPrint("‼️",#fileID,#function,#line, " is nil ")
-                    return UICollectionViewCell()
-                }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as? TableCollectionViewCell else {
+                debugPrint("‼️",#fileID,#function,#line, " is nil ")
+                return UICollectionViewCell()
+            }
             cell.tableNumLabel.text = "\(indexPath.row + 1)"
             cell.menuListSV.addArrangedSubview(MenuSV.getInstance(menuName: "첫번째", menuCount: "12"))
             cell.menuListSV.addArrangedSubview(MenuSV())
@@ -59,7 +59,7 @@ extension MainVM {
 
 //MARK: CollectionView Delegate
 extension MainVM {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sectionIndex = indexPath.section
         
         switch sectionIndex {
@@ -74,20 +74,27 @@ extension MainVM {
             case 1: // 주문내역
                 print("주문내역")
             case 2: // 설정
-                print("설정")
+                let vc = MenuSettingPopup()
+                SceneManager.shared.pushVC(vc: vc)
+            case 3:
+                print("메뉴삭제")
+                let vc = SettingVC()
+                SceneManager.shared.pushVC(vc: vc)
+                
             default: // 테이블
-                print("테이블 선택")
+                let vc = TableCountPopup()
+                SceneManager.shared.pushVC(vc: vc)
             }
             
         case 1: // Table
-                guard let cell = collectionView.cellForItem(at: indexPath) as? TableCollectionViewCell else {
-                    debugPrint("‼️",#fileID,#function,#line, " is nil ")
-                    return
-                }
+            guard let cell = collectionView.cellForItem(at: indexPath) as? TableCollectionViewCell else {
+                debugPrint("‼️",#fileID,#function,#line, " is nil ")
+                return
+            }
             print("indexpath.row \(indexPath.row)")
             let vc = OrderVC.getInstance(tableNum: indexPath.row + 1)
             SceneManager.shared.pushVC(vc: vc)
-       
+            
         default:
             return
         }

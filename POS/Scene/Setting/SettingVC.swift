@@ -15,6 +15,9 @@ class SettingVC: UIViewController {
     
     lazy var settingTopInfoView: SettingTopInfoView = {
         let view = SettingTopInfoView()
+        view.closeCompletion = {
+            SceneManager.shared.popVC()
+        }
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

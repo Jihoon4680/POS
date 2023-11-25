@@ -8,6 +8,9 @@
 import UIKit
 
 class SettingTopInfoView: UIView {
+    
+    var closeCompletion: (() -> Void)? = nil
+    
     lazy var optionImg : UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage.optionImg
@@ -31,6 +34,7 @@ class SettingTopInfoView: UIView {
         button.setCancelImage()
         button.contentMode = .scaleToFill
         button.tintColor = .black
+        button.addTarget(self, action: #selector(close), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -66,6 +70,11 @@ class SettingTopInfoView: UIView {
             closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])
+    }
+    
+    @objc
+    func close() {
+        closeCompletion?()
     }
 }
 
