@@ -9,10 +9,11 @@ import UIKit
 
 class MenuCollectionView: UICollectionView {
     
-//    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-//        super.init(frame : frame, collectionViewLayout : layout)
-//        configure()
-//    }
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame : frame, collectionViewLayout : layout)
+        print(#fileID,#function,#line," jh.ahn - \(frame) ")
+        configure()
+    }
     
     
     required init?(coder: NSCoder) {
@@ -37,9 +38,9 @@ class MenuCollectionView: UICollectionView {
         var columnCount: Int { // 열 설정 ( 한 행에 몇 열이 생성 될지 )
             switch self {
             case .cook:
-                return 4
+                return 5
             case .drink:
-                return 4
+                return 5
             }
         }
         
@@ -56,39 +57,46 @@ class MenuCollectionView: UICollectionView {
     
 }
 
-//extension MenuCollectionView {
-//
-//    private func configure(){
-//
-//    }
-//
-//    class func createLayout() -> UICollectionViewLayout{
-//        let layout = UICollectionViewCompositionalLayout {
-//            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-//            guard let layoutKind = MenuSectionLayoutKind(rawValue: sectionIndex) else { return nil }
-//            let sectionNum = layoutKind.sectionNum // 어느 섹션인지
-//            let columns = layoutKind.columnCount // 한줄에 몇개 넣는지
-//
-//            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
-//                                   heightDimension: .fractionalHeight(1.0))
-//
-//
-//            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//
-//            let itemInset = NSDirectionalEdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24)
-//            item.contentInsets = itemInset
-//
-//            let groupHeight =  NSCollectionLayoutDimension.fractionalHeight(0.25)
-//            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-//                                                   heightDimension: groupHeight)
-//            print(#fileID,#function,#line," jh.ahn - groupheight : \(groupHeight) ")
-//
-//            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: columns)
-//
-//            let section = NSCollectionLayoutSection(group: group)
-//            section.contentInsets = columns == 3 ?  NSDirectionalEdgeInsets(top: 24, leading: 24, bottom: 20, trailing: 24) : NSDirectionalEdgeInsets(top: 20, leading: 24, bottom: 24, trailing: 24)
-//            return section
-//        }
-//        return layout
-//    }
-//}
+extension MenuCollectionView {
+
+    private func configure(){
+      
+    }
+
+    class func createLayout() -> UICollectionViewLayout{
+       
+        let layout = UICollectionViewCompositionalLayout {
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            guard let layoutKind = MenuSectionLayoutKind(rawValue: sectionIndex) else { return nil }
+            
+            let columns = layoutKind.columnCount // 한줄에 몇개 넣는지
+
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
+                                   heightDimension: .fractionalHeight(1.0))
+
+
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+            let itemInset = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+            item.contentInsets = itemInset
+
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                   heightDimension: .fractionalHeight(0.2))
+
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: columns)
+            let width = group.layoutSize.widthDimension
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8)
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                         heightDimension: .absolute(44))
+            
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
+            
+            section.boundarySupplementaryItems = [sectionHeader]
+            return section
+        }
+        return layout
+    }
+}

@@ -67,7 +67,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+//        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
         configureUI()
         configureLayout()
     }
@@ -89,7 +89,7 @@ extension MenuCollectionViewCell {
     }
     
     private func configureLayout(){
-        print(#fileID,#function,#line," jh.ahn -  ")
+//        print(#fileID,#function,#line," jh.ahn -  ")
 
         addSubview(containerView)
         containerView.addSubview(menuSV)

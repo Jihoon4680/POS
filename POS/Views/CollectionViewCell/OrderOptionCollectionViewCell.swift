@@ -32,7 +32,7 @@ class OrderOptionCollectionViewCell: UICollectionViewCell {
 
 extension OrderOptionCollectionViewCell {
     func configure(){
-        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+//        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
         self.backgroundColor = .white
         layer.borderWidth = 1
         layer.borderColor = UIColor.tableBorder.cgColor

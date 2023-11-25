@@ -56,7 +56,7 @@ class TableCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+//        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
         configureUI()
         configureLayout()
     }
@@ -78,7 +78,7 @@ extension TableCollectionViewCell {
     }
     
     private func configureLayout(){
-        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+//        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
 
         addSubview(tableNumLabel)
         addSubview(menuListSV)

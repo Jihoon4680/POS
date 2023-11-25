@@ -83,8 +83,8 @@ extension MainVM {
                     return
                 }
             print("indexpath.row \(indexPath.row)")
-//            let vc = orderVC()
-//            SceneManager.shared.pushVC(vc: )
+            let vc = OrderVC.getInstance(tableNum: indexPath.row + 1)
+            SceneManager.shared.pushVC(vc: vc)
        
         default:
             return

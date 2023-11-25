@@ -88,7 +88,6 @@ extension TableUICollectionView {
             NSCollectionLayoutDimension.fractionalHeight(0.255)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: groupHeight)
-            print(#fileID,#function,#line," jh.ahn - groupheight : \(groupHeight) ")
             
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: columns)
 

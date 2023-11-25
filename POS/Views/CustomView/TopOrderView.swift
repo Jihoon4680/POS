@@ -21,7 +21,8 @@ class TopOrderView : UIView {
     // 주문내역 / 1번 테이블
     lazy var titlelabel : PosLabel = {
         let label = PosLabel()
-        label.text = "주문내역 / 1번 테이블" // '1' 숫자만 2, 3, 12 이런식으로 바꾸면 됨
+        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+//        label.text = "주문내역 / 1번 테이블" // '1' 숫자만 2, 3, 12 이런식으로 바꾸면 됨
         label.textColor = .appBlack
         label.setFontType(type: .Bold, size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false

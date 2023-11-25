@@ -39,7 +39,7 @@ class PaymentView: UIView {
         let tableView = OrderTableView(frame: .zero,style: .plain)
         tableView.separatorStyle = .none
         tableView.register(OrderMenuTableViewCell.self, forCellReuseIdentifier: OrderMenuTableViewCell.identifier)
-        tableView.backgroundColor = .systemPink
+        tableView.backgroundColor = .tableViewBg
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -178,7 +178,7 @@ extension PaymentView {
             orderTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             orderTableView.bottomAnchor.constraint(equalTo: deleteBtn.topAnchor, constant: -5),
             
-            paymentBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
+            paymentBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             paymentBtn.widthAnchor.constraint(equalToConstant: 320),
             paymentBtn.heightAnchor.constraint(equalToConstant: 60),
             paymentBtn.centerXAnchor.constraint(equalTo: centerXAnchor),

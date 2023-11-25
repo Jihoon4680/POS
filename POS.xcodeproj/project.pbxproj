@@ -25,7 +25,7 @@
 		E92D8EB52B109A9B0070E973 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D8EB42B109A9B0070E973 /* OrderModel.swift */; };
 		E92D8EB72B109AA20070E973 /* OrderMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D8EB62B109AA20070E973 /* OrderMenuView.swift */; };
 		E92D8EB92B109AA50070E973 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D8EB82B109AA50070E973 /* OrderVC.swift */; };
-		E92D8EBB2B109AA60070E973 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D8EBA2B109AA60070E973 /* OrderViewModel.swift */; };
+		E92D8EBB2B109AA60070E973 /* OrderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D8EBA2B109AA60070E973 /* OrderVM.swift */; };
 		E92D8EBD2B109BBA0070E973 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D8EBC2B109BBA0070E973 /* PaymentView.swift */; };
 		E92D8EBF2B10A2780070E973 /* OrderMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D8EBE2B10A2780070E973 /* OrderMenuTableViewCell.swift */; };
 		E969C6612AEFE82A009DB0FB /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969C6602AEFE82A009DB0FB /* UIViewController+Ext.swift */; };
@@ -96,7 +96,7 @@
 		E92D8EB42B109A9B0070E973 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		E92D8EB62B109AA20070E973 /* OrderMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenuView.swift; sourceTree = "<group>"; };
 		E92D8EB82B109AA50070E973 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
-		E92D8EBA2B109AA60070E973 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		E92D8EBA2B109AA60070E973 /* OrderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVM.swift; sourceTree = "<group>"; };
 		E92D8EBC2B109BBA0070E973 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		E92D8EBE2B10A2780070E973 /* OrderMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenuTableViewCell.swift; sourceTree = "<group>"; };
 		E969C6602AEFE82A009DB0FB /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				E92D8EB62B109AA20070E973 /* OrderMenuView.swift */,
 				E92D8EBC2B109BBA0070E973 /* PaymentView.swift */,
 				E92D8EB82B109AA50070E973 /* OrderVC.swift */,
-				E92D8EBA2B109AA60070E973 /* OrderViewModel.swift */,
+				E92D8EBA2B109AA60070E973 /* OrderVM.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -588,7 +588,7 @@
 				E972966E2B065D9400A4430D /* UIImage+Ext.swift in Sources */,
 				E969C66A2AEFEA02009DB0FB /* SpalshModel.swift in Sources */,
 				E9B1B18D2AF921050044E5C5 /* AFManager.swift in Sources */,
-				E92D8EBB2B109AA60070E973 /* OrderViewModel.swift in Sources */,
+				E92D8EBB2B109AA60070E973 /* OrderVM.swift in Sources */,
 				E91745AF2B0F509500F95ABC /* CurrentSalesList.swift in Sources */,
 				E90C8E532B12242200E5572D /* TableUICollectionView.swift in Sources */,
 				E9B1B1982AF943AB0044E5C5 /* PreferenceKey.swift in Sources */,

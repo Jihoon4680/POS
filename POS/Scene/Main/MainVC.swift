@@ -73,6 +73,7 @@ class MainVC: UIViewController {
 }
 
 extension MainVC : UICollectionViewDataSource{
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
