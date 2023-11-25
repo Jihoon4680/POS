@@ -9,8 +9,8 @@ import Foundation
 import RealmSwift
 
 class OrderedMenu : Object {
-    @Persisted var totalPrice : Int // 총 가격
-    @Persisted var totalCount : Int // 총 수량
+    @Persisted var totalPrice : Int = 0 // 총 가격
+    @Persisted var totalCount : Int = 0 // 총 수량
     @Persisted var menu : Menu // 메뉴 정보  
     
     convenience init( totalPrice : Int, totalCount : Int, menu : Menu){

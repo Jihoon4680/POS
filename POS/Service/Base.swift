@@ -128,12 +128,13 @@ class Base : NSObject{
      */
     func checkMenuListCount() {
         let menuListCount = DBManager.shared.read(MenuList.self).count
-      print(#fileID,#function,#line," jh.ahn - <#comment#> ")
-        if menuListCount == 0 {
-            print(#fileID,#function,#line," jh.ahn - <#comment#> ")
-        }else {
-            print(#fileID,#function,#line," jh.ahn - nil ")
-        }
+            
+            if menuListCount == 0 {
+                print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+            }else {
+                print(#fileID,#function,#line," jh.ahn - nil ")
+            }
+        
     }
     
     
