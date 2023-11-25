@@ -51,14 +51,45 @@ class MenuSettingPopup : UIViewController{
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    lazy var categoryPickerView :UIPickerView = {
-        let view = UIPickerView()
-        view.delegate = self
-        view.dataSource = self
-        return view
+//    lazy var categoryPickerView :UIPickerView = {
+//        let view = UIPickerView()
+//        view.delegate = self
+//        view.dataSource = self
+//        view.heightAnchor.constraint(equalToConstant: 40)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
+    lazy var cookBtn : UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius = 10
+        btn.layer.borderColor = UIColor.appBlack.cgColor
+        btn.backgroundColor = .white
+        btn.setTitleColor(.appBlack, for: .normal)
+        btn.setTitleColor(.appBlue, for: .selected)
+        btn.setTitle("요리", for: .normal)
+        btn.setTitle("요리", for: .selected)
+        btn.setFontType(type: .Bold, size: 20)
+        btn.addTarget(self, action: #selector(clickCook), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
+    lazy var drinkBtn : UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius = 10
+        btn.layer.borderColor = UIColor.appBlack.cgColor
+        btn.backgroundColor = .white
+        btn.setTitleColor(.appBlack, for: .normal)
+        btn.setTitleColor(.appBlue, for: .selected)
+        btn.setTitle("주류", for: .normal)
+        btn.setTitle("주류", for: .selected)
+        btn.setFontType(type: .Bold, size: 20)
+        btn.addTarget(self, action: #selector(clickDrink), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
     lazy var categorySV : UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [categoryLabel,categoryPickerView])
+        let sv = UIStackView(arrangedSubviews: [categoryLabel,cookBtn,drinkBtn])
         sv.axis = .horizontal
         sv.distribution = .fillEqually
         sv.spacing = 20
@@ -79,7 +110,7 @@ class MenuSettingPopup : UIViewController{
         let textField = UITextField()
         textField.keyboardType = .default
         textField.borderStyle = .roundedRect
-//        textField.backgroundColor = .systemGray5
+        textField.backgroundColor = .white
         textField.textColor = .white
         textField.font = UIFont.notoSansKR(size: 16, family: .Medium)
         textField.textAlignment = .center
@@ -111,7 +142,7 @@ class MenuSettingPopup : UIViewController{
         let textField = UITextField()
         textField.keyboardType = .numberPad
         textField.borderStyle = .roundedRect
-//        textField.backgroundColor = .systemGray5
+        textField.backgroundColor = .white
         textField.textColor = .white
         textField.font = UIFont.notoSansKR(size: 16, family: .Medium)
         textField.textAlignment = .center
@@ -210,8 +241,8 @@ class MenuSettingPopup : UIViewController{
 //            contentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 300),
             contentView.topAnchor.constraint(equalTo: view.topAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 450),
-//            contentView.bottomAnchor.constraint(equalTo: twoBtnSV.bottomAnchor,constant: 20),
+//            contentView.heightAnchor.constraint(equalToConstant: 450),
+            contentView.bottomAnchor.constraint(equalTo: twoBtnSV.bottomAnchor,constant: 20),
             
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 50),
@@ -227,7 +258,7 @@ class MenuSettingPopup : UIViewController{
             twoBtnSV.topAnchor.constraint(equalTo: allSV.bottomAnchor, constant: 20),
             twoBtnSV.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             twoBtnSV.leadingAnchor.constraint(equalTo: allSV.leadingAnchor),
-            twoBtnSV.heightAnchor.constraint(equalToConstant: 44)
+            twoBtnSV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant:  44)
             
         ])
         
@@ -255,6 +286,24 @@ class MenuSettingPopup : UIViewController{
 //        }
         
     }
+    @objc private func clickCook(){
+        if  drinkBtn.isSelected{
+            cookBtn.isSelected = true
+            drinkBtn.isSelected = false
+        }else {
+            cookBtn.isSelected = false
+        }
+    }
+    @objc private func clickDrink(){
+        if cookBtn.isSelected || drinkBtn.isSelected{
+            drinkBtn.isSelected = true
+            cookBtn.isSelected = false
+        }else {
+            drinkBtn.isSelected = false
+        }
+    }
+
+
     
 }
 

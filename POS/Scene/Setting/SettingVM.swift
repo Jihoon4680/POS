@@ -64,9 +64,13 @@ extension SettingVM {
         }
         
         cell.removeCompletion = {
-            self.data = self.data.filter { $0.name != self.data[selectedIndex].name}
-            collectionView.reloadData()
-        }
+                    var filteredData = self.data.filter { $0.category_no ==  sectionIndex }
+                    var otherMenuData = self.data.filter { $0.category_no != sectionIndex }
+                    filteredData.remove(at: selectedIndex)
+                    
+                    self.data = filteredData + otherMenuData
+                    collectionView.reloadData()
+                }
         
         return cell
     }
