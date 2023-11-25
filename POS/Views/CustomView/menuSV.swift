@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class MenuSV : UIStackView {
-    
-    lazy var menuLabel : PosLabel = {
+
+    lazy var nameLabel : PosLabel = {
         let label = PosLabel()
-        label.text = "제육볶음"
+        label.text = "초기데이터"
         label.textColor = .appBlack
         label.setFontType(type: .Regular, size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class MenuSV : UIStackView {
     
     lazy var countLabel : PosLabel = {
         let label = PosLabel()
-        label.text = "1"
+        label.text = "12"
         label.textColor = .appBlack
         label.setFontType(type: .Regular, size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,10 +29,11 @@ class MenuSV : UIStackView {
     }()
     
     override init(frame : CGRect){
+      
         super.init(frame: frame)
         configureLayout()
     }
-    
+   
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -42,7 +43,7 @@ class MenuSV : UIStackView {
         self.axis = .horizontal
         self.distribution = .equalSpacing
         
-        self.addArrangedSubview(menuLabel)
+        self.addArrangedSubview(nameLabel)
         self.addArrangedSubview(countLabel)
         
 //        NSLayoutConstraint.activate([
@@ -62,11 +63,16 @@ class MenuSV : UIStackView {
 //
 //        ])
     }
-    func setCount(count : Int){
-        let countStr = String(count)
-        self.countLabel.text = countStr
+}
+extension MenuSV {
+    
+    class func getInstance(menuName : String, menuCount : String) -> MenuSV{
+        let menuSV = MenuSV()
+        menuSV.nameLabel.text = menuName
+        menuSV.countLabel.text = menuCount
+        
+        return menuSV
     }
-
 }
 
 #if DEBUG

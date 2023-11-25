@@ -41,7 +41,14 @@ extension UIColor {
     class var appGrey : UIColor {
         return UIColor(92,101,114)
     }
-    
+    // 주문내역 날짜 색상
+    class var appLabelGrey : UIColor {
+        return UIColor(65,75,86)
+    }
+    // 주문하기 버튼 배경색
+    class var orderBtnBg : UIColor {
+        return UIColor(92,101,114)
+    }
     //RGB extension
     convenience init(_ red: Int,_ green: Int,_ blue: Int,_ alpha : CGFloat = 1.0) {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)

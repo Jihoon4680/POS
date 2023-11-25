@@ -22,7 +22,7 @@ class PosLabel : UILabel {
     
     private func configureHierarchy() {
         translatesAutoresizingMaskIntoConstraints = false
-        textColor = .black
+        textColor = .appBlack
         // font 초기설정
         font = UIFont.notoSansKR(size: 15, family: .Medium)
         

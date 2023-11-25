@@ -22,7 +22,15 @@ extension UIButton {
         let img = UIImage(named: "plus_btn")
         self.setImage(img, for: .normal)
     }
-    
+    func setCancelImage(){
+        let img = UIImage(named: "cancel_btn")
+        self.setImage(img, for: .normal)
+    }
+    func setDeleteImage(){
+        let img = UIImage(named: "delete_btn")
+        self.setImage(img, for: .normal)
+    }
+    //선택 시 미선택 시 isSelected로 분기처리
     func setCheckBoxImage(){
         let imgDefault = UIImage(named: "checkbox_default")
         let imgActive = UIImage(named: "checkbox_active")

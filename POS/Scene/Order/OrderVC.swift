@@ -10,8 +10,16 @@ import UIKit
 
 class OrderVC : UIViewController {
     
-    lazy var orderTableView : UITableView = {
-       return UITableView()
+    lazy var topOrderView : TopOrderView = {
+        let view = TopOrderView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var paymentView : PaymentView = {
+        let view = PaymentView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override func viewDidLoad() {

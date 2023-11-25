@@ -12,6 +12,7 @@ class OrderMenuTableViewCell: UITableViewCell {
     
     static let identifier = "OrderMenuTableViewCell"
     
+    //MARK: UI
     lazy var menuNameLabel : PosLabel = {
        let label = PosLabel()
         label.textColor = .appBlack
@@ -24,7 +25,7 @@ class OrderMenuTableViewCell: UITableViewCell {
     lazy var menuPriceLabel : PosLabel = {
        let label = PosLabel()
         label.textColor = .appBlack
-        label.text = Base.shared.seperateComma(text: "10000")
+        label.text = Base.shared.seperateComma(text: "10000") + "원"
         label.setFontType(type: .Black, size: 16)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +76,10 @@ class OrderMenuTableViewCell: UITableViewCell {
         return view
         
     }()
-
+    //MARK: Button Action Block
+    var plusBlock : (() -> Void)? = nil
+    var minusBlock : (() -> Void)? = nil
+    var checkBoxBlock : (() -> Void)? = nil
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -86,9 +90,33 @@ class OrderMenuTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
         configure()
     }
+    //cell간격 설정
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 16))
+    }
+    
+    //MARK: Button Action
+    @objc private func clickedCheckBox(){
+        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+        checkBoxBlock?()
+    }
+    
+    @objc private func clickMinus(){
+        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+        minusBlock?()
+    }
+    
+    @objc private func clickPlus(){
+        print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+        plusBlock?()
+    }
     
 }
 extension OrderMenuTableViewCell {
+    
+    //MARK: Layout
     func configure(){
         addSubview(checkBoxBtn)
         addSubview(menuNameLabel)
@@ -120,8 +148,7 @@ extension OrderMenuTableViewCell {
             plusBtn.widthAnchor.constraint(equalToConstant: 24),
             plusBtn.heightAnchor.constraint(equalToConstant: 24),
           
-            
-            
+
         ])
     }
 }

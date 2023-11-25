@@ -36,20 +36,17 @@ extension MainVM {
                 cell.backgroundColor = .appBlack
             }
             cell.titleLabel.text = orderOptionStr[indexPath.row]
-            
-            
             return cell
+            
         case 1: // Table
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCollectionViewCell.identifier, for: indexPath) as? TableCollectionViewCell else {
                     debugPrint("‼️",#fileID,#function,#line, " is nil ")
                     return UICollectionViewCell()
                 }
             cell.tableNumLabel.text = "\(indexPath.row + 1)"
-            // 이것도 데이터에 있는것만 쓔루룽 받아와야겠네 ....흠
+            cell.menuListSV.addArrangedSubview(MenuSV.getInstance(menuName: "첫번째", menuCount: "12"))
             cell.menuListSV.addArrangedSubview(MenuSV())
             cell.menuListSV.addArrangedSubview(MenuSV())
-            cell.menuListSV.addArrangedSubview(MenuSV())
-            
             return cell
         default:
             return UICollectionViewCell()

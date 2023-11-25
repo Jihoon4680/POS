@@ -20,21 +20,14 @@ class MainVC: UIViewController {
         return view
     }()
     // OrderOption & TableList  CollectionView
-    lazy var mainCollectionView : MainCollectionView = {
-        let collectionView = MainCollectionView(frame: .zero, collectionViewLayout: MainCollectionView.createLayout())
+    lazy var mainCollectionView : TableUICollectionView = {
+        let collectionView = TableUICollectionView(frame: .zero, collectionViewLayout: TableUICollectionView.createLayout())
         collectionView.register(TableCollectionViewCell.self, forCellWithReuseIdentifier: TableCollectionViewCell.identifier) // 셀 등록
         collectionView.register(OrderOptionCollectionViewCell.self, forCellWithReuseIdentifier: OrderOptionCollectionViewCell.identifier)
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false 
         return collectionView
     }()
-    // 주문내역 확인
-    lazy var mainTableView : MainTableView = {
-        let tableView = MainTableView(frame: .zero, style: .plain)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +82,7 @@ extension MainVC : UICollectionViewDataSource{
         if section == 0 {
             return 3
         } else {
-            return 20
+            return 30
         }
     }
     
@@ -97,6 +90,9 @@ extension MainVC : UICollectionViewDataSource{
 //        print("section index : \(indexPath.section)")
         return vm.collectionView(collectionView, cellForItemAt: indexPath)
     }
+    
+    
+    
 }
 extension MainVC : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
