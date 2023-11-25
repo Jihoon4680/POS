@@ -64,14 +64,14 @@ extension MenuCollectionView {
     }
 
     class func createLayout() -> UICollectionViewLayout{
-       
         let layout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             guard let layoutKind = MenuSectionLayoutKind(rawValue: sectionIndex) else { return nil }
             
             let columns = layoutKind.columnCount // 한줄에 몇개 넣는지
+            
 
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.1),
                                    heightDimension: .fractionalHeight(1.0))
 
 
@@ -97,6 +97,7 @@ extension MenuCollectionView {
             section.boundarySupplementaryItems = [sectionHeader]
             return section
         }
+        
         return layout
     }
 }

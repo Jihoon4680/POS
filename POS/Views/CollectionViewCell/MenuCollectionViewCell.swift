@@ -13,6 +13,7 @@ import UIKit
 class MenuCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MenuCollectionViewCell"
+    var removeCompletion: (() -> Void)? = nil
     
     lazy var nameLabel : PosLabel = {
        let label = PosLabel()
@@ -60,8 +61,13 @@ class MenuCollectionViewCell: UICollectionViewCell {
     lazy var cancelBtn : UIButton = {
         let btn = UIButton()
         btn.isHidden = true
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 24, weight: .regular, scale: .large)
+        let image = UIImage(systemName:"xmark.circle", withConfiguration: imageConfig)
+        btn.setImage(image, for: .normal)
+        btn.tintColor = .black
+        btn.contentMode = .scaleToFill
+        btn.addTarget(self, action: #selector(removeMenu), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .yellow
         return btn
     }()
 
@@ -75,6 +81,9 @@ class MenuCollectionViewCell: UICollectionViewCell {
         fatalError("not implemented")
     }
     
+    @objc func removeMenu() {
+        removeCompletion?()
+    }
 }
 
 extension MenuCollectionViewCell {
@@ -110,8 +119,8 @@ extension MenuCollectionViewCell {
             
             cancelBtn.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             cancelBtn.centerYAnchor.constraint(equalTo: containerView.topAnchor),
-            cancelBtn.widthAnchor.constraint(equalToConstant: 12),
-            cancelBtn.heightAnchor.constraint(equalToConstant: 12),
+            cancelBtn.widthAnchor.constraint(equalToConstant: 32),
+            cancelBtn.heightAnchor.constraint(equalToConstant: 32),
             
           
         ])

@@ -11,5 +11,6 @@ struct MenuModel {
     var id = UUID()
     var menuName : String
     var price : Int
-    var isDrink : Bool
+    var menuCategory : Int
+    //0: 요리, 1: 주류
 }

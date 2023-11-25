@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 화면을 구성하는 UIWindow 인스턴스 생성
         let window = UIWindow(windowScene: windowScene)
         // 실제 첫 화면이 되는 SplashViewController 인스턴스 생성 ( 회원관리 및 데이터 처리 VC )
-        let splashVC = SplashVC()        
+        let splashVC = SettingVC()
         // NavigationController을 사용할 경우, SplashViewController를 rootViewController로 갖는 NavigationController을 생성해야한다.
         let navigationController = UINavigationController(rootViewController: splashVC)
         // View관련 매니저에 저장

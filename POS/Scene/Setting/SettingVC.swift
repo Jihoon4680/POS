@@ -1,15 +1,18 @@
 import UIKit
 
+var data: [MenuModel] = [
+    MenuModel(menuName: "김치전", price: 10000, menuCategory: 0),
+    MenuModel(menuName: "제육볶음", price: 12000, menuCategory: 0),
+    MenuModel(menuName: "순대볶음", price: 15000, menuCategory: 0),
+    MenuModel(menuName: "소주", price: 4000, menuCategory: 1),
+    MenuModel(menuName: "맥주", price: 4000, menuCategory: 1),
+    MenuModel(menuName: "막걸리", price: 4000, menuCategory: 1),
+]
+
 class SettingVC: UIViewController {
     
-    let data = [
-        MenuModel(menuName: "aaa", price: 10000, isDrink: false),
-        MenuModel(menuName: "ddddd", price: 12000, isDrink: false),
-        MenuModel(menuName: "순대볶음", price: 15000, isDrink: false),
-        MenuModel(menuName: "소주", price: 4000, isDrink: true),
-        MenuModel(menuName: "aaa", price: 10000, isDrink: false),
-        MenuModel(menuName: "ddddd", price: 12000, isDrink: false),
-    ]
+    let vm = SettingVM(menuList: data)
+    
     lazy var settingTopInfoView: SettingTopInfoView = {
         let view = SettingTopInfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -18,12 +21,14 @@ class SettingVC: UIViewController {
     
     lazy var menuCollectionView: SettingCollectionView = {
         let cv = SettingCollectionView(frame: .zero, collectionViewLayout: SettingCollectionView.layout())
-        cv.backgroundColor = .white
-        cv.translatesAutoresizingMaskIntoConstraints = false
         
         cv.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
+        cv.register(MenuHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MenuHeaderView.identifier)
+        
+        cv.backgroundColor = .white
         cv.dataSource = self
         cv.delegate = self
+        cv.translatesAutoresizingMaskIntoConstraints = false
         
         return cv
     }()
@@ -52,23 +57,17 @@ class SettingVC: UIViewController {
         view.backgroundColor = .white
         configureHierarchy()
         setupCV()
-        setupDrinkView()
     }
     
     
     func configureHierarchy() {
         self.view.addSubview(settingTopInfoView)
-        self.view.addSubview(food)
         
         NSLayoutConstraint.activate([
             settingTopInfoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             settingTopInfoView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
             settingTopInfoView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
             settingTopInfoView.heightAnchor.constraint(equalToConstant: 64),
-            
-            food.topAnchor.constraint(equalTo: settingTopInfoView.bottomAnchor, constant: 20),
-            food.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
-            food.heightAnchor.constraint(equalToConstant: 35)
         ])
     }
     
@@ -82,51 +81,31 @@ class SettingVC: UIViewController {
             self.menuCollectionView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor),
 //            self.menuCollectionView.heightAnchor.constraint(equalToConstant: 300),
             self.menuCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.menuCollectionView.topAnchor.constraint(equalTo: food.bottomAnchor, constant: 0)
-        ])
-    }
-    
-    private func setupDrinkView() {
-        self.view.addSubview(drink)
-        
-        NSLayoutConstraint.activate([
-            drink.topAnchor.constraint(equalTo: menuCollectionView.bottomAnchor, constant: 10),
-            drink.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            drink.heightAnchor.constraint(equalToConstant: 35)
+            self.menuCollectionView.topAnchor.constraint(equalTo: settingTopInfoView.bottomAnchor, constant: 24)
         ])
     }
 }
 
 extension SettingVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return vm.numberOfSections(in: collectionView)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return data.filter { !$0.isDrink }.count
-        default:
-            return data.filter { $0.isDrink }.count
-        }
+        return vm.collectionView(collectionView, numberOfItemsInSection: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
-        let item = data[indexPath.row]
-        
-        cell.nameLabel.text = item.menuName
-        cell.priceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
-        cell.containerView.backgroundColor = item.isDrink ? UIColor.menuDrinkViewBg : UIColor.menuFoodViewBg
-        return cell
+        return vm.collectionView(collectionView, cellForItemAt: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return vm.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
 }
 
 extension SettingVC: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("User is tapped \(indexPath.row) cell")
-        print("\(indexPath.section)")
-    }
+    
 }
 
 
