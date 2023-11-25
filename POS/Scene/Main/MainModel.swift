@@ -26,7 +26,7 @@ struct TableInfo { // 테이블 번호와 주문 정보
 }
 struct OrderInfo {
     var orderMenuList : [OrderMenu] // 메뉴이름과 주문 수량
-    var totalCount : Int // 총 주문 갯수
+    var totalCount : Int // 총 주문 개수
     var totalPrice : Int // 총 결제 가격
 }
 struct OrderMenu {

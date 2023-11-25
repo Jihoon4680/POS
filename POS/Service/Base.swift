@@ -87,9 +87,8 @@ class Base : NSObject{
                 Base.shared.setSalesStart(dateStr: nowDateStr)
             }
         }
-
     }
-    //MARK: 설정 테이블 갯수 확인
+    //MARK: 설정 테이블 개수 확인
     /**
      Description : nil이면 초기 시작 -> Popup으로 테이블 셋팅한다.
      Date : 2023 . 11 . 26
@@ -99,21 +98,21 @@ class Base : NSObject{
         let tableCount = DBManager.shared.read(TableCount.self).first
       
         if let tableCount = tableCount { // nil이 아닐때 ( nil이면 false )
+            if tableCount.tableNum == 0 { // 0이어도 팝업
+                SceneManager.shared.showTableCountPopup()
+            }
             return
         }else {
-            SceneManager.shared.showPopup(type: .OneButton, title: "테이블 갯수 설정", body: "테이블을 설정하세요 ") {
-                print(#fileID,#function,#line," jh.ahn - <#comment#> ")
-
-            }
+            SceneManager.shared.showTableCountPopup()
         }
         
     }
-    //MARK: 테이블 갯수 설정
+    //MARK: 테이블 개수 설정
     /**
      Description : <#Descruption#>
      Date : 2023 . 11 . 26
      author :  JH
-     Parameter : 테이블갯수
+     Parameter : 테이블개수
      Return : Int
      */
     func setTableCount(tableCount : Int){

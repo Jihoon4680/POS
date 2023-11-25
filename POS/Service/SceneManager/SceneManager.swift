@@ -24,12 +24,17 @@ class SceneManager : NSObject {
     
     var mainVC : MainVC? // 테이블 & 주문목록
     
-    var popupVC : PopupVC?
+    var popupVC : PopupManager?
     
 }
 
 // MARK: Scene move 관련
 extension SceneManager : MoveScene {
+    func showTableCountPopup() {
+        let vc = TableCountPopup()
+        nav?.present(vc, animated: false)
+    }
+    
     /*
      // MARK: - ShowPopup
      Popup띄우기 확인과 취소 액션을 커스텀
@@ -41,7 +46,7 @@ extension SceneManager : MoveScene {
      @ return
      */
     func showPopup(type: PopupType,title : String, body : String, okAction: @escaping (() -> Void)) {
-        let popupVC = PopupVC()
+        let popupVC = PopupManager()
         popupVC.modalPresentationStyle = .overFullScreen
         popupVC.type = type
         popupVC.configureUI(title: title, body: body)

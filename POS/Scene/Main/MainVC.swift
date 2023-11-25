@@ -111,6 +111,8 @@ struct MainVC_PreView: PreviewProvider {
         
         MainVC()
             .getPreview()
+            .previewLayout(.fixed(width: 1100, height: 750))
     }
 }
 #endif
+

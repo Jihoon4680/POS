@@ -19,5 +19,4 @@ class Menu : Object {
         self.price = price
         self.category_no = category_no
     }
-
 }

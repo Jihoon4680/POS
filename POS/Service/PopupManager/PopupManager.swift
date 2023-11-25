@@ -11,9 +11,11 @@ import UIKit
 enum PopupType {
     case OneButton
     case TwoButton
+    case TableSetting
+    case CategorySetting
 }
 
-class PopupVC : UIViewController{
+class PopupManager : UIViewController{
     
     var type : PopupType = .OneButton
     
@@ -101,7 +103,7 @@ class PopupVC : UIViewController{
 //        super.viewWillAppear(animated)
 //        configureOneButtonLayout()
 //    }
-    
+    //MARK: 확인
     private func configureOneButtonLayout(){
         let safeAreaGuide = view.safeAreaLayoutGuide
         contentView.addSubview(titleLabel)
@@ -144,7 +146,7 @@ class PopupVC : UIViewController{
         ])
         print(#fileID, #function, #line, " jh.ahn  - view : \(self.view.frame) dim \(dimView.frame)")
     }
-    
+    //MARK: 취소/확인 버튼 Popup
     private func configureTwoButtonLayout(){
         let safeAreaGuide = view.safeAreaLayoutGuide
         contentView.addSubview(titleLabel)
@@ -186,6 +188,9 @@ class PopupVC : UIViewController{
      
     }
     
+    //MARK: 테이블 개수 세팅 팝업
+    
+    
     func configureUI(title : String, body : String){
         titleLabel.text = title
         bodyLabel.text = body
@@ -206,10 +211,10 @@ class PopupVC : UIViewController{
 import SwiftUI
 
 @available(iOS 13, *)
-struct PopupVC_PreView: PreviewProvider {
+struct TableCountPopup_PreView: PreviewProvider {
     static var previews: some View {
         
-        PopupVC()
+        TableCountPopup()
             .getPreview()
     }
 }

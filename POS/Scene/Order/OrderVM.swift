@@ -27,10 +27,11 @@ class OrderVM {
     }
     
     struct OrderedMenu {
-        let menuName : String
-        let menuPrice : Int
-        var menuTotalPrice : Int
-        var menuTotalCount : Int
+        let menuCategory : Int // 요리,주류  ( 0: 요리, 1: 주류 ).
+        let menuName : String // 메뉴 이름
+        let menuPrice : Int // 메뉴 가격
+        var menuTotalPrice : Int // 총 가격
+        var menuTotalCount : Int // 총 수량
     }
     
     init() {
