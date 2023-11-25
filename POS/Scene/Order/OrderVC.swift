@@ -24,6 +24,8 @@ class OrderVC : UIViewController {
         let view = PaymentView()
         view.backgroundColor = .tableViewBg
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.orderTableView.delegate = self
+        view.orderTableView.dataSource = self
         return view
     }()
     lazy var menuCV : MenuCollectionView = {
@@ -107,5 +109,20 @@ extension OrderVC : UICollectionViewDataSource{
     }
 }
 extension OrderVC : UICollectionViewDelegate{
+    
+}
+
+extension OrderVC : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
+extension OrderVC : UITableViewDelegate{
     
 }

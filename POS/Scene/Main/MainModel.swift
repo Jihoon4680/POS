@@ -14,6 +14,8 @@ let orderOptionStr = ["테이블", "주문내역", "설정"]
  2. 현재 테이블 상황 ( 테이블,메뉴 ( 수량, 이름) )
  */
 
+
+
 struct MainModel {
     let tableInfo : TableInfo
 }

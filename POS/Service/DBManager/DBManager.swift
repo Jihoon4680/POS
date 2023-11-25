@@ -16,6 +16,7 @@ class DBManager {
     var realm: Realm {
         get {
             do {
+
                 let realm = try Realm()
                 return realm
             }

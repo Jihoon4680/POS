@@ -10,7 +10,28 @@ import UIKit
 
 class OrderVM {
     
-    var tableNum = 0
+    var tableNum = 0 // 테이블번호
+    var orderMenuList = 0 // 주문 메뉴 목록
+    /* 주문목록
+     [
+        메뉴 이름,
+        메뉴 가격,
+        메뉴 수량,
+        메뉴 총 가격,
+     ]
+     */
+    // 테이블 당 총 주문 수량 -> 이걸 저장해
+    struct OrderedList {
+        let tableNum : Int
+        var orderedMenu : [OrderedMenu]
+    }
+    
+    struct OrderedMenu {
+        let menuName : String
+        let menuPrice : Int
+        var menuTotalPrice : Int
+        var menuTotalCount : Int
+    }
     
     init() {
         print(#fileID,#function,#line," jh.ahn -  ")

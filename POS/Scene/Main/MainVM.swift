@@ -31,7 +31,9 @@ extension MainVM {
                 debugPrint("‼️",#fileID,#function,#line, " is nil ")
                 return UICollectionViewCell()
             }
+            cell.backgroundColor = .white
             if indexPath.row == 0 {
+                print(#fileID,#function,#line," jh.ahn - \(orderOptionStr[indexPath.row]) ")
                 cell.titleLabel.textColor = .white
                 cell.backgroundColor = .appBlack
             }

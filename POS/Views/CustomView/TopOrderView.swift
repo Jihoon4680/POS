@@ -44,6 +44,7 @@ class TopOrderView : UIView {
         let btn = UIButton()
         btn.setCancelImage()
         btn.contentMode = .scaleToFill
+        btn.addTarget(self, action: #selector(clickCancel), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -77,6 +78,10 @@ class TopOrderView : UIView {
         fatalError("init(coder:) has not been implemented")
         configureLayout()
         
+    }
+    
+    @objc private func clickCancel(){
+        SceneManager.shared.popVC()
     }
     
    
