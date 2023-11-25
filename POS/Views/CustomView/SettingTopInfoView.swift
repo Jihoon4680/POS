@@ -8,7 +8,6 @@
 import UIKit
 
 class SettingTopInfoView: UIView {
-    
     lazy var optionImg : UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage.optionImg
@@ -27,13 +26,13 @@ class SettingTopInfoView: UIView {
         return label
     }()
     
-    lazy var closeImg: UIImageView = {
-        let imgView = UIImageView()
-        imgView.image = UIImage.closeImg
-        imgView.contentMode = .scaleToFill
-        imgView.tintColor = .black
-        imgView.translatesAutoresizingMaskIntoConstraints = false
-        return imgView
+    lazy var closeButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage.closeImg, for: .normal)
+        button.contentMode = .scaleToFill
+        button.tintColor = .black
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     override init(frame : CGRect){
@@ -51,7 +50,7 @@ class SettingTopInfoView: UIView {
         
         addSubview(optionImg)
         addSubview(optionLabel)
-        addSubview(closeImg)
+        addSubview(closeButton)
         
         NSLayoutConstraint.activate([
             optionImg.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -62,13 +61,12 @@ class SettingTopInfoView: UIView {
             optionLabel.leadingAnchor.constraint(equalTo: optionImg.trailingAnchor, constant: 10),
             optionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             
-            closeImg.widthAnchor.constraint(equalToConstant: 24),
-            closeImg.heightAnchor.constraint(equalToConstant: 24),
-            closeImg.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            closeImg.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
+            closeButton.widthAnchor.constraint(equalToConstant: 24),
+            closeButton.heightAnchor.constraint(equalToConstant: 24),
+            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])
     }
-    
 }
 
 #if DEBUG

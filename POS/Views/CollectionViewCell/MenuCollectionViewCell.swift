@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct MenuModel {
+    var menuName: String
+    var price: Int
+    var isDrink: Bool
+}
+
 class MenuCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MenuCollectionViewCell"
@@ -14,8 +20,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     lazy var menuNameLabel: PosLabel = {
         let label = PosLabel()
         label.textColor = .black
-        label.text = "제육볶음"
-        label.setFontType(type: .Regular, size: 22)
+        label.setFontType(type: .Medium, size: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -23,10 +28,21 @@ class MenuCollectionViewCell: UICollectionViewCell {
     lazy var menuPriceLabel: PosLabel = {
         let label = PosLabel()
         label.textColor = .black
-        label.text = "10,000원"
         label.setFontType(type: .Black, size: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var vStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 10
+        stack.distribution = .fill
+        stack.alignment = .center
+        stack.addArrangedSubview(menuNameLabel)
+        stack.addArrangedSubview(menuPriceLabel)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
     
     override init(frame: CGRect) {
@@ -34,6 +50,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         configureUI()
         configureLayout()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("not implemented")
     }
@@ -41,22 +58,16 @@ class MenuCollectionViewCell: UICollectionViewCell {
 
 extension MenuCollectionViewCell {
     private func configureUI() {
-        backgroundColor = UIColor.menuViewBg
+        backgroundColor = UIColor.menuFoodViewBg
         layer.cornerRadius = 16
     }
     
     private func configureLayout() {
-        addSubview(menuNameLabel)
-        addSubview(menuPriceLabel)
+        addSubview(vStack)
         
         NSLayoutConstraint.activate([
-            menuNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 28),
-            menuNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45),
-            menuNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -45),
-            
-            menuPriceLabel.topAnchor.constraint(equalTo: menuNameLabel.bottomAnchor, constant: 10),
-            menuPriceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 38),
-            menuPriceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 38),
+            vStack.centerXAnchor.constraint(equalTo: centerXAnchor),
+            vStack.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 }

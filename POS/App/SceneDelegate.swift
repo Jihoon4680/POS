@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 실제 첫 화면이 되는 SplashViewController 인스턴스 생성 ( 회원관리 및 데이터 처리 VC )
         let splashVC = SplashVC()
         // NavigationController을 사용할 경우, SplashViewController를 rootViewController로 갖는 NavigationController을 생성해야한다.
-        let navigationController = UINavigationController(rootViewController: splashVC)
+        let navigationController = UINavigationController(rootViewController: SettingVC())
         // View관련 매니저에 저장
         SceneManager.shared.nav = navigationController // navigation지정
         SceneManager.shared.nav?.isNavigationBarHidden = true
