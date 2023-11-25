@@ -9,9 +9,11 @@ import Foundation
 import RealmSwift
 class Menu: Object {
     
-    @Persisted var name: String = ""  // 이름
+    @Persisted var name: String = "" // 이름
     @Persisted var price: Int = 0     // 가격
-    @Persisted var category_no: Int = 0  // 카테고리 번호 ( 정렬 기준 )
+    @Persisted var category_no : Int = 0  // 카테고리 번호 ( 정렬 기준 )
+    
+//    @Persisted(originProperty: "list") var clubs: LinkingObjects<MenuList>
     
     convenience init(name: String, price: Int, category_no: Int) {
         self.init()
@@ -19,4 +21,5 @@ class Menu: Object {
         self.price = price
         self.category_no = category_no
     }
+
 }

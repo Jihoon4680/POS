@@ -127,13 +127,11 @@ class Base : NSObject{
      author :  JH
      */
     func checkMenuListCount() {
-        let menuListCount = DBManager.shared.read(MenuList.self).count
-            
-            if menuListCount == 0 {
-                print(#fileID,#function,#line," jh.ahn - <#comment#> ")
-            }else {
-                print(#fileID,#function,#line," jh.ahn - nil ")
-            }
+        let menuListCount = DBManager.shared.realm.objects(Menu.self).count
+        if menuListCount == 0 { // list가 없다는 뜻
+            SceneManager.shared.showAddMenuPopup()
+        }
+        print("menu \(menuListCount)")
         
     }
     

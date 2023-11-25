@@ -46,6 +46,7 @@ extension DBManager {
     
     // 읽기
     func read<T: Object>(_ object: T.Type) -> Results<T> {
+        
         return realm.objects(object)
     }
     // 추가

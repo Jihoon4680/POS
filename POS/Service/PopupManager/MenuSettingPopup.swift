@@ -60,7 +60,6 @@ class MenuSettingPopup : UIViewController{
     lazy var categorySV : UIStackView = {
         let sv = UIStackView(arrangedSubviews: [categoryLabel,categoryPickerView])
         sv.axis = .horizontal
-        sv.heightAnchor.constraint(equalToConstant: 15).isActive = true
         sv.distribution = .fillEqually
         sv.spacing = 20
         sv.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +68,7 @@ class MenuSettingPopup : UIViewController{
     lazy var menuNameLabel : PosLabel = {
         let label = PosLabel()
         label.setFontType(type: .SemiBold, size: 16)
-        label.text = "메뉴 가격 : "
+        label.text = "메뉴 이름 : "
         label.textColor = .appBlack
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -78,10 +77,10 @@ class MenuSettingPopup : UIViewController{
     }()
     lazy var menuNameTextField : UITextField = {
         let textField = UITextField()
-        textField.keyboardType = .numberPad
+        textField.keyboardType = .default
         textField.borderStyle = .roundedRect
-        textField.backgroundColor = .systemGray5
-        textField.textColor = .appBlack
+//        textField.backgroundColor = .systemGray5
+        textField.textColor = .white
         textField.font = UIFont.notoSansKR(size: 16, family: .Medium)
         textField.textAlignment = .center
         textField.placeholder = "가격을 입력하세요"
@@ -112,8 +111,8 @@ class MenuSettingPopup : UIViewController{
         let textField = UITextField()
         textField.keyboardType = .numberPad
         textField.borderStyle = .roundedRect
-        textField.backgroundColor = .systemGray5
-        textField.textColor = .appBlack
+//        textField.backgroundColor = .systemGray5
+        textField.textColor = .white
         textField.font = UIFont.notoSansKR(size: 16, family: .Medium)
         textField.textAlignment = .center
         textField.placeholder = "10,000원"
@@ -208,10 +207,11 @@ class MenuSettingPopup : UIViewController{
             dimView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             
             contentView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            contentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+//            contentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 300),
-            contentView.topAnchor.constraint(equalTo: titleLabel.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: twoBtnSV.bottomAnchor,constant: 20),
+            contentView.topAnchor.constraint(equalTo: view.topAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 450),
+//            contentView.bottomAnchor.constraint(equalTo: twoBtnSV.bottomAnchor,constant: 20),
             
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 50),
@@ -279,6 +279,7 @@ extension MenuSettingPopup : UIPickerViewDelegate,UIPickerViewDataSource {
         // pickerView에서 보여주고 싶은 아이템의 제목
         // 각각의 component 마다 다른 값을 갖게 한다.
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            print(#fileID,#function,#line," jh.ahn - <#comment#> ")
                 return menuCategoryStr[row]
         }
         

@@ -9,9 +9,9 @@ import Foundation
 import RealmSwift
 
 class MenuList : Object {
-    @Persisted var list : List<Menu?>
+    @Persisted var list : List<Menu> = List<Menu>()
     
-    convenience init(list: List<Menu?> ) {
+    convenience init(list: List<Menu> ) {
         self.init()
         self.list = list
     }

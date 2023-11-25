@@ -35,7 +35,7 @@ class MainVC: UIViewController {
         configureDataSource()
         Base.shared.checkSales() // 영업시작 전 or 시작 24시간이후
 //        Base.shared.checkTableCount()
-//        Base.shared.checkMenuListCount()
+        Base.shared.checkMenuListCount()
         
         
     }

@@ -30,6 +30,13 @@ class SceneManager : NSObject {
 
 // MARK: Scene move 관련
 extension SceneManager : MoveScene {
+    func showAddMenuPopup() {
+        let vc = MenuSettingPopup()
+        vc.modalPresentationStyle = .overFullScreen
+        nav?.present(vc, animated: false)
+    }
+    
+    
     func showTableCountPopup() {
         let vc = TableCountPopup()
         nav?.present(vc, animated: false)
