@@ -42,24 +42,23 @@ class OrderMenuTableViewCell: UITableViewCell {
      }()
     
     lazy var checkBoxBtn : UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .blue
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         btn.setCheckBoxImage()
         btn.isSelected = false
-        btn.frame.size = CGSize(width: 24, height: 24)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
     lazy var minusBtn : UIButton = {
         let btn = UIButton()
-        btn.backgroundColor = .green
+        btn.setMinusImage()
+        btn.contentMode = .scaleAspectFit
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     lazy var plusBtn : UIButton = {
         let btn = UIButton()
-        btn.backgroundColor = .blue
+        btn.setPlusImage()
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -92,8 +91,10 @@ class OrderMenuTableViewCell: UITableViewCell {
 extension OrderMenuTableViewCell {
     func configure(){
         addSubview(checkBoxBtn)
-        addSubview(countSV)
         addSubview(menuNameLabel)
+        addSubview(menuPriceLabel)
+        addSubview(countSV)
+        
         
         
         NSLayoutConstraint.activate([
@@ -108,9 +109,17 @@ extension OrderMenuTableViewCell {
             menuNameLabel.leadingAnchor.constraint(equalTo: checkBoxBtn.trailingAnchor,constant: 8),
             menuNameLabel.centerYAnchor.constraint(equalTo: checkBoxBtn.centerYAnchor),
             
+            menuPriceLabel.trailingAnchor.constraint(equalTo: countSV.leadingAnchor, constant: -24),
+            menuPriceLabel.centerYAnchor.constraint(equalTo: checkBoxBtn.centerYAnchor),
+            
             countSV.trailingAnchor.constraint(equalTo: trailingAnchor),
             countSV.centerYAnchor.constraint(equalTo: checkBoxBtn.centerYAnchor),
-            countSV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
+            
+            minusBtn.widthAnchor.constraint(equalToConstant: 24),
+            minusBtn.heightAnchor.constraint(equalToConstant: 24),
+            plusBtn.widthAnchor.constraint(equalToConstant: 24),
+            plusBtn.heightAnchor.constraint(equalToConstant: 24),
+          
             
             
         ])
