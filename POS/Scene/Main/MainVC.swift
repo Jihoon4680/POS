@@ -83,7 +83,7 @@ extension MainVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        print(#fileID,#function,#line," jh.ahn - section \( section.hashValue) ")
         if section == 0 {
-            return 3
+            return 5
         } else {
             return 30
         }

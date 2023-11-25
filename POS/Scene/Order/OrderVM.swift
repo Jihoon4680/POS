@@ -68,20 +68,14 @@ extension OrderVM {
         
         switch sectionIndex {
         case 0: // OrderOption
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
-                debugPrint("‼️",#fileID,#function,#line, " is nil ")
-                return UICollectionViewCell()
-            }
+         
             cell.containerView.backgroundColor = .menuFoodViewBg
             cell.nameLabel.text = "제육볶음"
             cell.priceLabel.text = Base.shared.seperateComma(text: "10000") + "원"
             return cell
             
         case 1: // Table
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
-                debugPrint("‼️",#fileID,#function,#line, " is nil ")
-                return UICollectionViewCell()
-            }
+           
             cell.containerView.backgroundColor = .menuDrinkViewBg
             cell.nameLabel.text = "제육볶음"
             cell.priceLabel.text = Base.shared.seperateComma(text: "10000") + "원"

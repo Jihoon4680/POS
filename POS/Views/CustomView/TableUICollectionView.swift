@@ -28,7 +28,7 @@ class TableUICollectionView : UICollectionView {
         var columnCount: Int {
             switch self {
             case .orderOption:
-                return 3
+                return 5
             case .table:
                 return 5
             }
@@ -83,16 +83,16 @@ extension TableUICollectionView {
             NSDirectionalEdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12)
             item.contentInsets = itemInset
             
-            let groupHeight = columns == 3 ?
+            let groupHeight = sectionNum == 0 ?
             NSCollectionLayoutDimension.fractionalHeight(0.07) :
             NSCollectionLayoutDimension.fractionalHeight(0.255)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: groupHeight)
             
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: columns)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 5)
 
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = columns == 3 ?  NSDirectionalEdgeInsets(top: 24, leading: 24, bottom: 20, trailing: 24) : NSDirectionalEdgeInsets(top: 20, leading: 24, bottom: 24, trailing: 24)
+            section.contentInsets = sectionNum == 0 ?  NSDirectionalEdgeInsets(top: 24, leading: 24, bottom: 20, trailing: 24) : NSDirectionalEdgeInsets(top: 20, leading: 24, bottom: 24, trailing: 24)
             return section
         }
         return layout

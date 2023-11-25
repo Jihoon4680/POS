@@ -71,7 +71,7 @@ extension MenuCollectionView {
             let columns = layoutKind.columnCount // 한줄에 몇개 넣는지
             
 
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.1),
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
                                    heightDimension: .fractionalHeight(1.0))
 
 
