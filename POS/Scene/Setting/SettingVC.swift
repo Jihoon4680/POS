@@ -18,6 +18,7 @@ class SettingVC: UIViewController {
     
     lazy var menuCollectionView: SettingCollectionView = {
         let cv = SettingCollectionView(frame: .zero, collectionViewLayout: SettingCollectionView.layout())
+        cv.backgroundColor = .white
         cv.translatesAutoresizingMaskIntoConstraints = false
         
         cv.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
@@ -114,9 +115,9 @@ extension SettingVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
         let item = data[indexPath.row]
         
-        cell.menuNameLabel.text = item.menuName
-        cell.menuPriceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
-        cell.backgroundColor = item.isDrink ? UIColor.menuDrinkViewBg : UIColor.menuFoodViewBg
+        cell.nameLabel.text = item.menuName
+        cell.priceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
+        cell.containerView.backgroundColor = item.isDrink ? UIColor.menuDrinkViewBg : UIColor.menuFoodViewBg
         return cell
     }
 }

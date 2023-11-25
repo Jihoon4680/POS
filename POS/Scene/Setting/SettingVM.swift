@@ -34,8 +34,8 @@ extension SettingVM {
                 return UICollectionViewCell()
             }
             let item = data[indexPath.row]
-            cell.menuNameLabel.text = item.menuName
-            cell.menuPriceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
+            cell.nameLabel.text = item.menuName
+            cell.priceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
             cell.backgroundColor = UIColor.menuFoodViewBg
             return cell
             
@@ -45,8 +45,8 @@ extension SettingVM {
                 return UICollectionViewCell()
             }
             let item = data[indexPath.row]
-            cell.menuNameLabel.text = item.menuName
-            cell.menuPriceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
+            cell.nameLabel.text = item.menuName
+            cell.priceLabel.text = Base.shared.seperateComma(text: "\(item.price)") + "원"
             cell.backgroundColor = UIColor.menuFoodViewBg
             return cell
         default:

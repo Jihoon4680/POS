@@ -36,7 +36,7 @@ class SettingCollectionView: UICollectionView {
         let cvLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         cvLayout.minimumLineSpacing = 16
         cvLayout.minimumInteritemSpacing = 11
-        cvLayout.sectionInset = UIEdgeInsets(top: 14, left: 24, bottom: 14, right: 24)
+        cvLayout.sectionInset = UIEdgeInsets(top: 8, left: 24, bottom: 14, right: 24)
         cvLayout.itemSize = CGSize(width: 169, height: 137)
         return cvLayout
     }

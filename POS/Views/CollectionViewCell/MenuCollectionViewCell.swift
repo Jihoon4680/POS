@@ -53,13 +53,13 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     lazy var containerView : UIView = {
         let view = UIView()
-        view.backgroundColor = .systemPink
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var cancelBtn : UIButton = {
         let btn = UIButton()
+        btn.isHidden = true
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = .yellow
         return btn
@@ -81,9 +81,9 @@ extension MenuCollectionViewCell {
     
     private func configureUI(){
         backgroundColor = .white
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.tableBorder.cgColor
-        layer.cornerRadius = 16
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = UIColor.tableBorder.cgColor
+        containerView.layer.cornerRadius = 16
         
 //        threeDotImgView.isHidden = false
     }

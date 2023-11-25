@@ -28,7 +28,7 @@ class SettingTopInfoView: UIView {
     
     lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage.closeImg, for: .normal)
+        button.setCancelImage()
         button.contentMode = .scaleToFill
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false

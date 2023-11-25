@@ -49,6 +49,12 @@ extension UIColor {
     class var orderBtnBg : UIColor {
         return UIColor(92,101,114)
     }
+    class var menuFoodViewBg : UIColor {
+            return UIColor(229, 238, 255)
+        }
+    class var menuDrinkViewBg : UIColor {
+        return UIColor(255, 237, 237)
+    }
     //RGB extension
     convenience init(_ red: Int,_ green: Int,_ blue: Int,_ alpha : CGFloat = 1.0) {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
