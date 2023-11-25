@@ -55,6 +55,7 @@ class TopOrderView : UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
     
 //    //설정 라벨
 //    lazy var optionLabel : PosLabel = {
@@ -109,16 +110,11 @@ extension TopOrderView {
             dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -17),
             
             cancelBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            cancelBtn.centerYAnchor.constraint(equalTo: centerYAnchor)
+            cancelBtn.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-//            optionLabel.centerYAnchor.constraint(equalTo: dateLabel.centerYAnchor),
-//            optionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-//
-//            optionImg.centerYAnchor.constraint(equalTo: dateLabel.centerYAnchor),
-//            optionImg.trailingAnchor.constraint(equalTo: optionLabel.leadingAnchor, constant: -10),
-//            optionImg.widthAnchor.constraint(equalToConstant: 24),
-//            optionImg.heightAnchor.constraint(equalToConstant: 24)
-//
+            bottomLineView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bottomLineView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bottomLineView.bottomAnchor.constraint(equalTo: bottomAnchor)
             
 
         ])

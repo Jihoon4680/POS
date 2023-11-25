@@ -21,6 +21,11 @@ class OrderVC : UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+//    lazy var menuCV : MenuCollectionView = {
+//        let cv : MenuCollectionView(frma)
+//        return cv
+//        
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
