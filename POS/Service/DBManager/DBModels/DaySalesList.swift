@@ -15,8 +15,6 @@ class DaySalesList : Object {
     
     convenience init(completeDate : Int, totalPrice : Int, totalCount : Int, menu : List<OrderedMenu>){
         self.init()
-        self.tableNum = tableNum
-        self.payDate = payDate
         self.totalPrice = totalCount
         self.totalCount = totalCount
         self.menu = menu

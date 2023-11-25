@@ -105,20 +105,37 @@ class Base : NSObject{
         }else {
             SceneManager.shared.showTableCountPopup()
         }
-        
     }
     //MARK: 테이블 개수 설정
     /**
-     Description : <#Descruption#>
+     Description : 테이블 개수 설정
      Date : 2023 . 11 . 26
      author :  JH
      Parameter : 테이블개수
      Return : Int
      */
-    func setTableCount(tableCount : Int){
+    func setMenuList(tableCount : Int){
         let tableCount = TableCount(tableNum: tableCount)
         DBManager.shared.write(tableCount)
     }
+    
+    
+    //MARK: 설정 메뉴 개수 확인
+    /**
+     Description : nil이면 초기 시작 -> Popup으로 테이블 셋팅한다.
+     Date : 2023 . 11 . 26
+     author :  JH
+     */
+    func checkMenuListCount() {
+        let menuListCount = DBManager.shared.read(MenuList.self).count
+      print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+        if menuListCount == 0 {
+            print(#fileID,#function,#line," jh.ahn - <#comment#> ")
+        }else {
+            print(#fileID,#function,#line," jh.ahn - nil ")
+        }
+    }
+    
     
     func endSales(){
         UserDefaults.standard.set(nil, forKey: SALES_DATE_KEY)

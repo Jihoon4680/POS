@@ -7,7 +7,7 @@
 
 import Foundation
 
-let orderOptionStr = ["테이블", "주문내역", "설정"]
+let orderOptionStr = ["테이블", "주문내역", "메뉴추가", "메뉴삭제"]
 
 /*
  1. 현재 매출 상황 ( 테이블,메뉴 ( 수량, 이름 ), 총결제금액, 결제시간)

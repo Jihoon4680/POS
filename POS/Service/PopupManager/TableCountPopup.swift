@@ -167,12 +167,12 @@ class TableCountPopup : UIViewController{
     }
     
     @objc private func clickOk(){
-        if let tableCount = tableCountTextField.text {
-            let intTableCount = Int(tableCount) ?? 0
-            Base.shared.setTableCount(tableCount: intTableCount )
-        }else {
-            ToastManager.showMessage("테이블 개수를 입력하세요.")
-        }
+//        if let tableCount = tableCountTextField.text {
+//            let intTableCount = Int(tableCount) ?? 0
+//            Base.shared.setTableCount(tableCount: intTableCount )
+//        }else {
+//            ToastManager.showMessage("테이블 개수를 입력하세요.")
+//        }
         
     }
     
